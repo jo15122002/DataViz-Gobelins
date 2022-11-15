@@ -1,0 +1,1 @@
+console.log("Pong! Le script JS marche")
