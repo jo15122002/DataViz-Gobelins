@@ -1,8 +1,3 @@
-.charts-pie{
-    width: 400px;
-    height: 400px;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -13,8 +8,7 @@ body{
     height: 88vh;
 }
 
-.container{
-    width: 500vw;
+.slide-container{
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
