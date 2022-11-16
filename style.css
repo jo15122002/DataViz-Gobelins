@@ -3,19 +3,25 @@
     height: 400px;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     overflow-y: hidden;
+    height: 88vh;
 }
 
 .container{
     width: 500vw;
-    height: max-content;
+    height: 100%;
     display: flex;
     flex-wrap: nowrap;
 }
 
 .slide{
-    background-color: wheat;
+    background-color: red;
     width: 100vw;
     height: 100%;
     border: 1px solid black;
@@ -30,7 +36,7 @@ footer{
     bottom: 0;
     left: 0px;
     width: 100%;
-    height: 50px;
+    height: 10vh;
     background-color: #f1f1f1;
     text-align: center;
     line-height: 50px;
