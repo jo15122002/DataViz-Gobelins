@@ -49,30 +49,31 @@ function displaySlideBus(){
     numberOfSeatsPerlines = numberOfPassengers / numberOfLines;
 
     for(let i = 0; i < numberOfPassengers; i++){
+        let passenger = document.createElement('div');
+        BUS.appendChild(passenger);
+        passenger.classList.add('passenger');
         setTimeout(() => {
-            let passenger = document.createElement('div');
-            BUS.appendChild(passenger);
-            passenger.classList.add('passenger');
-            goToPlace(passenger, i, numberOfLines, numberOfSeatsPerlines, BUS);
-        }, i*100);
+            if(Math.floor(i/numberOfSeatsPerlines) > (((numberOfLines - 1)/2.0))){
+                centerLineOffset = (100/numberOfLines);
+            }else{
+                centerLineOffset = 0;
+            }
+            x1 = (2*(100/numberOfLines)) * 0.8 + "%";
+            y = ((i % numberOfSeatsPerlines) * (100/numberOfSeatsPerlines)) + (passenger.offsetWidth / (numberOfSeatsPerlines)) + '%';
+            x2 = ((Math.floor(i/numberOfSeatsPerlines)) * (100/numberOfLines)) * 0.8 + 1 + centerLineOffset + '%';
+            goToPlace(passenger, x1, y, x2);
+        }, i*200);
     }
-
-
 }
 
-function goToPlace(passenger, placeNumber, numberOfLines, numberOfSeatsPerlines, bus){
-    console.log(bus.offsetWidth);
-
-    if(Math.floor(placeNumber/numberOfSeatsPerlines) > (numberOfLines/2 - 1)){
-        centerLineOffset = (100/numberOfLines);
-    }else{
-        centerLineOffset = 0;
-    }
-    
-    passenger.style.top = ((Math.floor(placeNumber/numberOfSeatsPerlines)) * (100/numberOfLines)) * 0.8 + 1 + centerLineOffset + '%';
+function goToPlace(passenger, x1, y, x2){
+    passenger.style.top = x1
     setTimeout(() => {
-        passenger.style.left = ((placeNumber % numberOfSeatsPerlines) * (100/numberOfSeatsPerlines)) + (passenger.offsetWidth / (numberOfSeatsPerlines)) + '%';
-    }, 1000);
+        passenger.style.left = y
+        setTimeout(() => {
+            passenger.style.top = x2
+        }, 200);
+    }, 200);
 };
 
 function displaySlideHome(){
