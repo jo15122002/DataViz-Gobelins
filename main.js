@@ -36,5 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.backgroundColor ="blue";
         }
     })
-    
+
+    let btn_next = document.querySelector('.btn-suivant')
+
+    btn_next.addEventListener('click', ()=> {
+        window.scrollTo(window.scrollX + window.innerWidth, 0);
+    })
+
 })

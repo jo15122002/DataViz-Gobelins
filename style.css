@@ -9,7 +9,7 @@
 }
 
 body{
-    overflow-y: hidden;
+    overflow: hidden;
     height: 88vh;
 }
 
@@ -30,6 +30,8 @@ body{
 html{
     scroll-behavior: smooth;
 }
+
+
 
 footer{
     position: fixed;
