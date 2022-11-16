@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let btn_launch = document.querySelector('.btn-launch');
     let btns_slides = document.querySelectorAll('.btn-slide');
 
-    document.querySelector('.slide-container').style.width = NBR_SLIDE * 100+'vw';
+    document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
+
+    displaySlideHome();
 
     window.addEventListener("scroll", (event) => {
 
@@ -30,3 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function displaySlideHome(){
+    let home_slide = document.querySelector('.slide-home');
+    console.log(home_slide);
+}

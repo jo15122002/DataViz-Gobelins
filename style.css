@@ -8,7 +8,7 @@ body{
     height: 88vh;
 }
 
-.slide-container{
+.slides-container{
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -26,6 +26,59 @@ html{
 }
 
 
+/* Page d'accueil */
+
+.slide-home h1{
+    text-align: center;
+    margin-top: 24%;
+}
+
+.slide-home .person-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.slide-home .boy, .slide-home .girl{
+    position: relative;
+}
+
+.slide-home .boy, .slide-home .girl{
+    width: 200px;
+    height: 260px;
+}
+
+.slide-home .boy .boy-logo, .slide-home .girl .girl-logo{
+    width: 100%;
+    height: 100%;
+}
+
+.slide-home .boy .buble, .slide-home .girl .buble{
+    width: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.slide-home .boy .buble{
+    left: 70%;
+}
+
+.slide-home .girl .buble{
+    left: 80%;
+}
+
+.slide-home .boy .name, .slide-home .girl .name{
+    position: absolute;
+    top: 12%;
+}
+
+.slide-home .boy .name{
+    left: 81%;
+}
+
+.slide-home .girl .name{
+    left: 95%;
+}
 
 footer{
     position: fixed;
