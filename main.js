@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const NBR_SLIDE = document.querySelectorAll('.slide').length;
 
-    let btn_launch = document.querySelector('.btn-launch');
     let btns_slides = document.querySelectorAll('.btn-slide');
 
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
@@ -21,9 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 
-    btn_launch.addEventListener('click', ()=> {
-        document.getElementById('slide1').scrollIntoView();
-    });
+    document.querySelector('.btn-restart').addEventListener('click', () =>{
+        document.getElementById('slide0').scrollIntoView();
+    })
+
+
 
     btns_slides.forEach(btn_slide =>{
         btn_slide.addEventListener('click', () => {
@@ -34,6 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displaySlideHome(){
-    let home_slide = document.querySelector('.slide-home');
-    console.log(home_slide);
+
+    let btn_start = document.querySelector('.btn-launch');
+    let bus = document.querySelector('.bus');
+    let bubles = document.querySelectorAll('.buble');
+    let names = document.querySelectorAll('.name');
+
+    btn_start.addEventListener('click', ()=> {
+
+        bubles.forEach(function (buble){
+            buble.classList.add('animate__fadeOut')
+        });
+
+        names.forEach(function (name){
+            name.classList.add('animate__fadeOut')
+        });
+
+        setTimeout(() => {
+            bus.style.display = 'block';
+            bus.classList.add('animate__bounceInLeft');
+        }, 1000);
+
+        setTimeout(() => {
+            document.querySelector('.girl').style.display="none";
+        }, 2500);
+
+        setTimeout(() => {
+            document.querySelector('.boy').style.display="none";
+            document.querySelector('.titre-home').style.display="none"
+        }, 3000);
+
+        setTimeout(() => {
+            bus.classList.add('animate__bounceOutRight');
+        }, 3500);
+
+        setTimeout(() => {
+            document.getElementById('slide1').scrollIntoView();
+            }, 4000);
+    });
 }

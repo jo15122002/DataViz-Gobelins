@@ -30,7 +30,7 @@ html{
 
 .slide-home h1{
     text-align: center;
-    margin-top: 24%;
+    margin-top: 15%;
 }
 
 .slide-home .person-container{
@@ -79,6 +79,21 @@ html{
 .slide-home .girl .name{
     left: 95%;
 }
+
+.slide-home .bus{
+    display: none;
+    position: absolute;
+    top: 33%;
+    left: 15%;
+    width: 60%;
+}
+
+.slide-home .bus img{
+    width: 100%;
+    height: 100%;
+}
+
+
 
 footer{
     position: fixed;
