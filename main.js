@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let btn_launch = document.querySelector('.btn-launch');
     let btns_slides = document.querySelectorAll('.btn-slide');
 
-    document.getElementById('slide0').scrollIntoView();
-
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
+
+    displaySlideHome();
 
     window.addEventListener("scroll", (event) => {
 
@@ -73,4 +73,9 @@ function goToPlace(passenger, placeNumber, numberOfLines, numberOfSeatsPerlines,
     setTimeout(() => {
         passenger.style.left = ((placeNumber % numberOfSeatsPerlines) * (100/numberOfSeatsPerlines)) + (passenger.offsetWidth / (numberOfSeatsPerlines)) + '%';
     }, 1000);
+};
+
+function displaySlideHome(){
+    let home_slide = document.querySelector('.slide-home');
+    console.log(home_slide);
 }
