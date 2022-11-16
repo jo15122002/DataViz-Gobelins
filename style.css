@@ -9,16 +9,29 @@ body{
 
 .container{
     width: 500vw;
+    height: max-content;
     display: flex;
     flex-wrap: nowrap;
 }
 
 .slide{
+    background-color: wheat;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     border: 1px solid black;
 }
 
 html{
     scroll-behavior: smooth;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    text-align: center;
+    line-height: 50px;
 }
