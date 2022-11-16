@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    transition: ease-in-out 1s all;
 }
 
 body{
@@ -8,7 +9,7 @@ body{
     height: 88vh;
 }
 
-.slide-container{
+.slides-container{
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -36,4 +37,28 @@ footer{
     background-color: #f1f1f1;
     text-align: center;
     line-height: 50px;
+}
+
+/*Slide Bus*/
+.bus{
+    background-color: yellow;
+    
+    width: 50%;
+    height: 45%;
+    margin: auto;
+    margin-top: 10%;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.passenger{
+    background-color: blue;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 5%;
+    height: 12.5%;
+    border: 1px solid black;
+    transition: all ease-in-out 1s;
 }
