@@ -89,7 +89,7 @@ button{
 .slide-home .boy{
     width: 110px;
     height: 125px;
-    bottom: 18%;
+    bottom: 22%;
     left: 10%;
     transform: rotate(-6deg);
 }
@@ -97,7 +97,7 @@ button{
 .slide-home .girl{
     width: 127px;
     height: 124px;
-    bottom: 20%;
+    bottom: 23%;
     left: 19%;
     transform: rotate(7deg);
 }
