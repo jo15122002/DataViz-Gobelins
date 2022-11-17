@@ -1,6 +1,8 @@
 //Dom content loaded
-const BOYSCOLOR = '#9712DD';
-const GIRLSCOLOR = '#FF791F';
+const GIRLSCOLOR = '#9712DD';
+const BOYSCOLOR = '#FF791F';
+
+var current_page = 1;
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -8,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const NBR_SLIDE = document.querySelectorAll('.slide').length;
 
     let btns_slides = document.querySelectorAll('.btn-slide');
+    let btn_previous = document.querySelector('.prev');
+    let btn_next = document.querySelector('.next');
 
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
 
     document.querySelector('.btn-restart').addEventListener('click', () =>{
-        document.getElementById('slide0').scrollIntoView();
+        document.getElementById('slide1').scrollIntoView();
     })
 
     btns_slides.forEach(btn_slide =>{
@@ -23,13 +27,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    btn_previous.addEventListener('click', () => {
+        current_page -=1;
+        if(current_page <= 2){
+            btn_previous.style.display="none";
+        }
+        console.log(current_page);
+        document.querySelector('.barre-etat').src = 'img/barre-etat-'+current_page+'.png';
+        document.getElementById('slide'+current_page).scrollIntoView();
+    });
+
+    btn_next.addEventListener('click', () => {
+        current_page +=1;
+        if(current_page >= 2 ){
+            btn_previous.style.display="inline";
+            document.querySelector('.prev').classList.add('animate__fadeIn');
+        }
+        console.log('img/barre-etat-'+current_page+'.png');
+        document.querySelector('.barre-etat').src = 'img/barre-etat-'+current_page+'.png';
+        document.getElementById('slide'+current_page).scrollIntoView();
+    });
+
     displaySlideHome();
     displaySlideBus();
     displaySlideSchool();
+
 });
 
 function displaySlideBus(){
+
     let busPassengers = document.querySelectorAll('.passenger');
+
     busPassengers.forEach(passenger => {
         passenger.remove()
     });
@@ -80,9 +108,8 @@ function displaySlideBus(){
                 goToPlace(passenger, x1, y, x2);
                 if(i==numberOfPassengers-1){
                     setTimeout(() => {
-                        console.log("busGOGOGO")
-                        busCote.style.left = "100%"
-                        busCote.style.opacity = "0%"
+                        busCote.style.left = "100%";
+                        busCote.style.opacity = "0%";
                     }, 2200);
                 }
             }, i*200);
@@ -149,14 +176,10 @@ function displaySlideHome(){
 
     let btn_start = document.querySelector('.btn-launch');
 
-    let bubles = document.querySelectorAll('.buble');
     let names = document.querySelectorAll('.name');
 
     btn_start.addEventListener('click', ()=> {
-
-        bubles.forEach(function (buble){
-            buble.classList.add('animate__fadeOut')
-        });
+        btn_start.style.display = 'none';
 
         names.forEach(function (name){
             name.classList.add('animate__fadeOut')
@@ -181,7 +204,6 @@ function busAnimation(){
 
     setTimeout(() => {
         document.querySelector('.boy').style.display="none";
-        document.querySelector('.titre-home').style.display="none"
     }, 3000);
 
     setTimeout(() => {
@@ -189,8 +211,16 @@ function busAnimation(){
     }, 3500);
 
     setTimeout(() => {
-        document.getElementById('slide1').scrollIntoView();
+        current_page+=1;
+        document.getElementById('slide'+current_page).scrollIntoView();
+        document.querySelector('.next').style.display='inline';
+        document.querySelector('.next').classList.add('animate__fadeIn');
+        document.querySelector('.barre-etat').src = 'img/barre-etat-'+current_page+'.png';
+
     }, 4000);
+
+
+
 }
 
 function displaySlideSchool(){

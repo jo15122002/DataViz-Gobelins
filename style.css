@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio&family=Podkova&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -5,30 +8,35 @@
 
 body{
     overflow: hidden;
-    height: 88vh;
+    height: 100vh;
 }
 
 h1{
-    font-size: 62px;
+    color: #332b36;
+    font-size: 128px;
     text-transform: uppercase;
+    font-family: 'Antonio', sans-serif;
 }
 
 h2{
+    color: #332b36;
     font-size: 24px;
     font-weight: normal;
+    font-family: 'Podkova', serif;
 }
 
 .percentage-boy, .percentage-girl{
     font-size: 45px;
+    font-family: 'Antonio', sans-serif;
 }
 
 
 .percentage-girl{
-    color: #FF791F;
+    color: #9712DD;
 }
 
 .percentage-boy{
-    color: #9712DD;
+    color: #FF791F;
 }
 
 .slides-container{
@@ -38,36 +46,60 @@ h2{
 }
 
 .slide{
-    background-color: white;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100%;
     border: 1px solid black;
+    position: relative;
 }
 
 html{
     scroll-behavior: smooth;
 }
 
+.prev, .next{
+    display: none;
+}
+
+button{
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
 /* Page d'accueil */
 
 .slide-home h1{
-    text-align: center;
+    font-size: 128px;
+    margin-top: 75px;
+    margin-left: 130px;
 }
 
-.slide-home .person-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-}
-
-.slide-home .boy, .slide-home .girl{
-    position: relative;
+.slide-home h2{
+    font-size: 62px;
+    margin-left: 416px;
 }
 
 .slide-home .boy, .slide-home .girl{
-    width: 200px;
-    height: 260px;
+    position: absolute;
+}
+
+.slide-home .boy{
+    width: 110px;
+    height: 125px;
+    bottom: 21%;
+    left: 13%;
+    transform: rotate(-6deg);
+}
+
+.slide-home .girl{
+    width: 127px;
+    height: 124px;
+    bottom: 23%;
+    left: 20%;
+    transform: rotate(7deg);
 }
 
 .slide-home .boy .boy-logo, .slide-home .girl .girl-logo{
@@ -75,42 +107,60 @@ html{
     height: 100%;
 }
 
-.slide-home .boy .buble, .slide-home .girl .buble{
-    width: 50%;
-    position: absolute;
-    top: 0;
-}
 
-.slide-home .boy .buble{
-    left: 70%;
-}
-
-.slide-home .girl .buble{
-    left: 80%;
-}
 
 .slide-home .boy .name, .slide-home .girl .name{
+    font-family: 'Podkova', serif;
+    font-size: 48px;
+    font-weight: bold;
     position: absolute;
-    top: 12%;
 }
 
 .slide-home .boy .name{
-    left: 81%;
+    color: #FF791F;
+    top: -75%;
+
 }
 
 .slide-home .girl .name{
-    left: 95%;
+    color: #9712DD;
+    top: -75%;
 }
 
 .slide-home .bus-home{
     display: none;
     position: absolute;
-    top: 33%;
-    left: 15%;
+    z-index: 10;
+    top: 45%;
+    left: 0%;
     width: 60%;
 }
 
 .slide-home .bus-home img{
+    width: 100%;
+    height: 100%;
+}
+
+.slide-home .tache{
+    width: 25%;
+    position: absolute;
+    left: 65%;
+}
+
+.line-home{
+    width: 100%;
+    margin-top: 200px;
+}
+
+.bus-stop{
+    width: 354px;
+    height: 268px;
+    position: absolute;
+    bottom: 17.5%;
+    left: 23%;
+}
+
+.bus-stop img {
     width: 100%;
     height: 100%;
 }
@@ -140,18 +190,19 @@ html{
 }
 
 #slide3 .buttons button{
-    height: 64px;
-    width: 64px;
     margin-bottom: 5px;
     margin-left: 75%;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    height: 64px;
+    width: 64px;
 }
 
 #slide3 .students{
     width: 50%;
     display: flex;
 }
+
 
 #slide3 .students .boys-students{
     margin-right: 15px;
@@ -165,6 +216,7 @@ html{
     display: flex;
 }
 
+
 #slide3 .percentage-boy{
     margin-left: 13%;
 }
@@ -173,15 +225,31 @@ html{
     margin-left: 2%;
 }
 
+/*Footer*/
+
 footer{
     position: fixed;
     bottom: 0;
     left: 0px;
     width: 100%;
     height: 10vh;
-    background-color: #f1f1f1;
+    background-color: transparent;
     text-align: center;
     line-height: 50px;
+}
+
+footer img{
+    width: 40%;
+}
+
+footer .btn-launch{
+    padding: 10px 30px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 80%;
+    top: 20%;
 }
 
 /*Slide Bus*/
