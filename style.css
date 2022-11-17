@@ -190,7 +190,7 @@ footer{
 }
 
 .bus-slide2{
-    background-color: yellow;
+    background-color: transparent;
     width: 35%;
     height: 20%;
     left: 25%;
@@ -201,25 +201,15 @@ footer{
 }
 
 .passenger{
-    background-color: black;
+    background-color: transparent;
     position: absolute;
     top: 100%;
-    left: 0%;
+    right: 0%;
+    left: auto;
     width: 5%;
-    height: 12.5%;
-    border: 1px solid black;
     border-radius: 50%;
     transition: all ease-in-out 0.2s;
     overflow: hidden;
-}
-
-.passenger .fillPassenger{
-    transition: all 1s ease-in-out;
-    --passenger-fill-width: 0%;
-    --passenger-fill-color: black;
-    width: var(--passenger-fill-width);
-    height: 100%;
-    background-color: var(--passenger-fill-color);
 }
 
 .male-logo-slide2{
@@ -252,4 +242,24 @@ footer{
     bottom: 20%;
     top: auto;
     left: 50%;
+}
+
+.passenger-img{
+    width: 100%;
+    height: 100%;
+}
+
+#slide2 .percentage{
+    position: absolute;
+    left: 16%;
+    top: 33%;
+    opacity: 0%;
+}
+
+#slide2 .percentage-boy{
+
+}
+
+#slide2 .percentage-girl{
+    margin-top: 103%;
 }
