@@ -8,6 +8,16 @@ body{
     height: 88vh;
 }
 
+h1{
+    font-size: 62px;
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 24px;
+    font-weight: normal;
+}
+
 .slides-container{
     height: 100%;
     display: flex;
@@ -80,7 +90,7 @@ html{
     left: 95%;
 }
 
-.slide-home .bus{
+.slide-home .bus-home{
     display: none;
     position: absolute;
     top: 33%;
@@ -88,12 +98,57 @@ html{
     width: 60%;
 }
 
-.slide-home .bus img{
+.slide-home .bus-home img{
     width: 100%;
     height: 100%;
 }
 
 
+/*Page école*/
+
+#slide3{
+    display : flex;
+}
+
+#slide3 .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+#slide3 .col-gauche{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+#slide3 .col-droite{
+    width: 50vw;
+}
+
+#slide3 .buttons button{
+    height: 64px;
+    width: 64px;
+    margin-bottom: 5px;
+    margin-left: 75%;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#slide3 .students{
+    width: 60%;
+    display: flex;
+}
+
+
+#slide3 .students .boys-students{
+    margin-right: 15px;
+}
+
+#slide3 .students img{
+    width: 10%;
+}
 
 footer{
     position: fixed;
@@ -109,7 +164,6 @@ footer{
 /*Slide Bus*/
 .bus{
     background-color: yellow;
-    
     width: 50%;
     height: 45%;
     margin: auto;

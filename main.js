@@ -8,22 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
 
-    displaySlideHome();
-
-    window.addEventListener("scroll", (event) => {
-
-        if(window.scrollX > window.innerWidth){
-            document.body.style.backgroundColor ="red";
-        }else{
-            document.body.style.backgroundColor ="blue";
-        }
-    })
-
     document.querySelector('.btn-restart').addEventListener('click', () =>{
         document.getElementById('slide0').scrollIntoView();
     })
-
-
 
     btns_slides.forEach(btn_slide =>{
         btn_slide.addEventListener('click', () => {
@@ -33,7 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    displaySlideHome();
     displaySlideBus();
+    displaySlideSchool();
 });
 
 function displaySlideBus(){
@@ -81,7 +70,7 @@ function goToPlace(passenger, x1, y, x2){
 function displaySlideHome(){
 
     let btn_start = document.querySelector('.btn-launch');
-    let bus = document.querySelector('.bus');
+
     let bubles = document.querySelectorAll('.buble');
     let names = document.querySelectorAll('.name');
 
@@ -95,26 +84,109 @@ function displaySlideHome(){
             name.classList.add('animate__fadeOut')
         });
 
-        setTimeout(() => {
-            bus.style.display = 'block';
-            bus.classList.add('animate__bounceInLeft');
-        }, 1000);
+        busAnimation();
 
-        setTimeout(() => {
-            document.querySelector('.girl').style.display="none";
-        }, 2500);
-
-        setTimeout(() => {
-            document.querySelector('.boy').style.display="none";
-            document.querySelector('.titre-home').style.display="none"
-        }, 3000);
-
-        setTimeout(() => {
-            bus.classList.add('animate__bounceOutRight');
-        }, 3500);
-
-        setTimeout(() => {
-            document.getElementById('slide1').scrollIntoView();
-            }, 4000);
     });
+}
+
+function busAnimation(){
+    let bus = document.querySelector('.bus-home');
+
+    setTimeout(() => {
+        bus.style.display = 'block';
+        bus.classList.add('animate__bounceInLeft');
+    }, 1000);
+
+    setTimeout(() => {
+        document.querySelector('.girl').style.display="none";
+    }, 2500);
+
+    setTimeout(() => {
+        document.querySelector('.boy').style.display="none";
+        document.querySelector('.titre-home').style.display="none"
+    }, 3000);
+
+    setTimeout(() => {
+        bus.classList.add('animate__bounceOutRight');
+    }, 3500);
+
+    setTimeout(() => {
+        document.getElementById('slide1').scrollIntoView();
+    }, 4000);
+}
+
+function displaySlideSchool(){
+
+    let boys_students = document.querySelector('.boys-students');
+    let girls_students = document.querySelector('.girls-students');
+
+    let btn_fight = document.querySelector('.btn-bagarre');
+
+    generateGroupeOfPeolpleSVG(50,boys_students,'boy');
+    generateGroupeOfPeolpleSVG(50,girls_students,'girl');
+
+    /*To do : mettre ces données dans un fichier JSON*/
+    let percentage_fight_girl = 22;
+    let percentage_fight_boy = 50;
+
+    let number_of_people = document.querySelectorAll('.boy').length;
+
+    let relative_percentage_boy = Math.round(percentage_fight_boy*number_of_people)/100;
+    let relative_percentage_girl = Math.round(percentage_fight_girl*number_of_people)/100;
+
+    btn_fight.addEventListener('click', ()=>{
+        for ( let i = 0 ; i < relative_percentage_boy; i++ ){
+            setTimeout(() => {
+            let boy_concerned = document.querySelector('.boy-'+i);
+            boy_concerned.style.fill = '#9712DD';
+            }, 100*i);
+        }
+
+        for ( let i = 0 ; i < relative_percentage_girl; i++ ){
+            setTimeout(() => {
+                let girl_concerned = document.querySelector('.girl-'+i);
+                girl_concerned.style.fill = '#FF791F';
+            }, 100*i);
+        }
+    });
+}
+
+function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className){
+
+    for(let i=0; i<numberOfPeople; i++){
+        let svg = buildSVGBoy();
+        svg.classList.add(className+'-'+i);
+        svg.classList.add(className);
+        parent.appendChild(svg);
+    }
+}
+
+function buildSVGBoy(){
+
+    let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    let path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    let path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    let path3 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    let path4 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+
+    svg.setAttribute('fill', '#CFCFCF');
+    svg.setAttribute('viewBox', '0 0 18 37');
+    svg.setAttribute('width', '18');
+    svg.setAttribute('height', '37');
+
+    path1.setAttribute('d','M0.790039 17.1435C0.790039 14.7484 2.71078 12.8069 5.08014 12.8069H12.9453C15.3147 12.8069 17.2354 14.7484 17.2354 17.1435V27.9851H0.790039V17.1435Z');
+
+    path2.setAttribute('d','M4.12678 26.4191C4.12678 25.4212 4.92709 24.6122 5.91432 24.6122C6.90156 24.6122 7.70187 25.4212 7.70187 26.4191V34.3697C7.70187 35.3676 6.90156 36.1766 5.91432 36.1766C4.92709 36.1766 4.12678 35.3676 4.12678 34.3697V26.4191Z');
+
+    path3.setAttribute('d','M10.5619 26.4191C10.5619 25.4212 11.3622 24.6122 12.3495 24.6122C13.3367 24.6122 14.137 25.4212 14.137 26.4191V34.3697C14.137 35.3676 13.3367 36.1766 12.3495 36.1766C11.3622 36.1766 10.5619 35.3676 10.5619 34.3697V26.4191Z');
+
+    path4.setAttribute('d','M14.6388 6.31526C14.6388 9.42244 12.1199 11.9413 9.01273 11.9413C5.90555 11.9413 3.38668 9.42244 3.38668 6.31526C3.38668 3.20808 5.90555 0.689209 9.01273 0.689209C12.1199 0.689209 14.6388 3.20808 14.6388 6.31526Z');
+
+    svg.appendChild(path1);
+    svg.appendChild(path2);
+    svg.appendChild(path3);
+    svg.appendChild(path4);
+
+    return svg;
+
 }
