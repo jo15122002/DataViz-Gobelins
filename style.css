@@ -254,10 +254,11 @@ footer{
     left: 16%;
     top: 33%;
     opacity: 0%;
+    transition: all 0.5s ease;
 }
 
 #slide2 .percentage-boy{
-
+    
 }
 
 #slide2 .percentage-girl{

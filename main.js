@@ -83,9 +83,9 @@ function displaySlideBus(){
                 goToPlace(passenger, x1, y, x2);
                 if(i==numberOfPassengers-1){
                     setTimeout(() => {
-                        console.log("busGOGOGO")
                         busCote.style.left = "100%"
                         busCote.style.opacity = "0%"
+                        document.querySelector('#slide2 .percentage').style.opacity = '100%'
                     }, 2200);
                 }
             }, i*200);
@@ -128,8 +128,6 @@ function fillEmUp(){
             element.style.fill = GIRLSCOLOR
         }, index*200);
     });
-
-    document.querySelector('#slide2 .percentage').style.opacity = '100%'
 }
 
 function goToPlace(passenger, x1, y, x2){
