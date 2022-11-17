@@ -1,6 +1,6 @@
 //Dom content loaded
-const BOYSCOLOR = '#9712DD';
-const GIRLSCOLOR = '#FF791F';
+const GIRLSCOLOR = '#9712DD';
+const BOYSCOLOR = '#FF791F';
 var slide_state = 1;
 
 document.addEventListener('DOMContentLoaded', function() {
