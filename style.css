@@ -18,6 +18,19 @@ h2{
     font-weight: normal;
 }
 
+.percentage-boy, .percentage-girl{
+    font-size: 45px;
+}
+
+
+.percentage-girl{
+    color: #FF791F;
+}
+
+.percentage-boy{
+    color: #9712DD;
+}
+
 .slides-container{
     height: 100%;
     display: flex;
@@ -40,7 +53,6 @@ html{
 
 .slide-home h1{
     text-align: center;
-    margin-top: 15%;
 }
 
 .slide-home .person-container{
@@ -137,10 +149,9 @@ html{
 }
 
 #slide3 .students{
-    width: 60%;
+    width: 50%;
     display: flex;
 }
-
 
 #slide3 .students .boys-students{
     margin-right: 15px;
@@ -148,6 +159,18 @@ html{
 
 #slide3 .students img{
     width: 10%;
+}
+
+#slide3 .percentage{
+    display: flex;
+}
+
+#slide3 .percentage-boy{
+    margin-left: 13%;
+}
+
+#slide3 .percentage-girl{
+    margin-left: 2%;
 }
 
 footer{

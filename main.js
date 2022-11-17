@@ -1,4 +1,7 @@
 //Dom content loaded
+const BOYSCOLOR = '#9712DD';
+const GIRLSCOLOR = '#FF791F';
+
 document.addEventListener('DOMContentLoaded', function() {
 
     //Variables
@@ -107,39 +110,6 @@ function fillEmUp(){
             element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-color", 'pink')
         }, index*200);
     });
-
-    // let toggle = true
-    // let boysBack = []
-    // //reformattage des tableaux
-    // for(i = 0; i < boys.length/2; i++){
-    //     boysBack[i] = boys[i];
-    //     boysBack[i+1] = boys[i + 10];
-    // }
-    // console.log(boysBack)
-
-    // boys.forEach((element, index) =>{
-    //     console.log(element, index)
-    //     fillDiv = element.createElement("div")
-    //     fillDiv.classList.add("fillPassenger")
-
-    //     statPourcents = 23
-    //     setTimeout(() => {
-    //         element.querySelector(".passengerFill").style.setProperty("--passenger-fill-width", statPourcents + '%')
-    //         element.style.setProperty("--passenger-after-color", '#0000FF')
-    //     }, index%numberOfSeatsPerlines * 200);
-    // })
-
-    // girls.forEach((element, index) =>{
-    //     console.log(element, index)
-    //     console.log(index%numberOfPassengers)
-    //     //Todo donnée à changer par donnée de json
-    //     if((index%numberOfSeatsPerlines) < Math.ceil(23/100*girls.length)/2 - Math.floor(index/(numberOfSeatsPerlines*numberOfLines/2))){
-    //         setTimeout(() => {
-    //             element.style.setProperty("--passenger-after-width", '100%')
-    //             element.style.setProperty("--passenger-after-color", '#FF00E0')
-    //         }, index%numberOfSeatsPerlines * 200);
-    //     }
-    // })
 }
 
 function goToPlace(passenger, x1, y, x2){
@@ -205,35 +175,68 @@ function displaySlideSchool(){
     let boys_students = document.querySelector('.boys-students');
     let girls_students = document.querySelector('.girls-students');
 
-    let btn_fight = document.querySelector('.btn-bagarre');
+    let btn_fight = document.querySelector('.btn-fight');
+    let btn_ignored = document.querySelector('.btn-ignored');
+    let btn_sexist = document.querySelector('.btn-sexist');
 
     generateGroupeOfPeolpleSVG(50,boys_students,'boy');
     generateGroupeOfPeolpleSVG(50,girls_students,'girl');
 
     /*To do : mettre ces données dans un fichier JSON*/
-    let percentage_fight_girl = 22;
-    let percentage_fight_boy = 50;
+    let percentage_fight_girl = 11;
+    let percentage_fight_boy = 21;
+    let percentage_ignored_boy = 35;
+    let percentage_ignored_girl = 42;
+    let percentage_sexist_insult_boy = 6;
+    let percentage_sexist_insult_girl = 11;
 
-    let number_of_people = document.querySelectorAll('.boy').length;
-
-    let relative_percentage_boy = Math.round(percentage_fight_boy*number_of_people)/100;
-    let relative_percentage_girl = Math.round(percentage_fight_girl*number_of_people)/100;
+    let number_of_boy = document.querySelectorAll('.boy').length;
+    let number_of_girl = document.querySelectorAll('.girl').length;
 
     btn_fight.addEventListener('click', ()=>{
-        for ( let i = 0 ; i < relative_percentage_boy; i++ ){
-            setTimeout(() => {
-            let boy_concerned = document.querySelector('.boy-'+i);
-            boy_concerned.style.fill = '#9712DD';
-            }, 100*i);
-        }
-
-        for ( let i = 0 ; i < relative_percentage_girl; i++ ){
-            setTimeout(() => {
-                let girl_concerned = document.querySelector('.girl-'+i);
-                girl_concerned.style.fill = '#FF791F';
-            }, 100*i);
-        }
+        clearSvg(number_of_boy, 'boy');
+        clearSvg(number_of_girl, 'girl');
+        fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy', BOYSCOLOR)
+        fillPercentageOfPeople(percentage_fight_girl, number_of_girl, 'girl', GIRLSCOLOR)
     });
+
+    btn_ignored.addEventListener('click', () => {
+        clearSvg(number_of_boy, 'boy');
+        clearSvg(number_of_girl, 'girl');
+        fillPercentageOfPeople(percentage_ignored_boy, number_of_boy, 'boy', BOYSCOLOR);
+        fillPercentageOfPeople(percentage_ignored_girl, number_of_girl, 'girl', GIRLSCOLOR);
+    })
+
+    btn_sexist.addEventListener('click', () => {
+        clearSvg(number_of_boy,'boy');
+        clearSvg(number_of_girl, 'girl');
+        fillPercentageOfPeople(percentage_sexist_insult_boy, number_of_boy, 'boy', BOYSCOLOR);
+        fillPercentageOfPeople(percentage_sexist_insult_girl, number_of_girl, 'girl', GIRLSCOLOR);
+    })
+}
+
+function fillPercentageOfPeople(percentageValue, divPeoples, peopleConcerned, color){
+    let relative_percentage = Math.round(percentageValue*divPeoples)/100;
+    for ( let i = 0 ; i < relative_percentage; i++ ){
+        setTimeout(() => {
+            let people_concerned = document.querySelector('.'+peopleConcerned+'-'+i);
+            people_concerned.style.fill = color;
+        }, 100*i);
+    }
+
+    for ( let i = 0 ; i < percentageValue; i++ ){
+        setTimeout(() => {
+            let percentage = document.querySelector('.percentage-'+peopleConcerned);
+            percentage.innerText = i+'%'
+        }, 50*i);
+    }
+}
+
+function clearSvg(number_of_people, peopleConcerned){
+    for ( let i = 0 ; i < number_of_people-1; i++ ){
+        let people_concerned = document.querySelector('.'+peopleConcerned+'-'+i);
+        people_concerned.style.fill = '#CFCFCF';
+    }
 }
 
 function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className){
