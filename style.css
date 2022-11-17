@@ -107,25 +107,44 @@ footer{
 }
 
 /*Slide Bus*/
-.bus{
+.bus-slide2{
     background-color: yellow;
     
     width: 50%;
     height: 45%;
-    margin: auto;
-    margin-top: 10%;
+    left: 25%;
+    top: 10%;
     position: relative;
-    display: flex;
-    flex-wrap: nowrap;
+    opacity: 100%;
+    transition: all ease-in 1s;
 }
 
 .passenger{
-    background-color: blue;
+    background-color: black;
     position: absolute;
     top: 100%;
     left: 0%;
     width: 5%;
     height: 12.5%;
     border: 1px solid black;
+    border-radius: 50%;
     transition: all ease-in-out 0.2s;
+    overflow: hidden;
+}
+
+.passenger .fillPassenger{
+    transition: all 1s ease-in-out;
+    --passenger-fill-width: 0%;
+    --passenger-fill-color: black;
+    width: var(--passenger-fill-width);
+    height: 100%;
+    background-color: var(--passenger-fill-color);
+}
+
+.male-logo-slide2{
+    width: 40px;
+}
+
+.female-logo-slide2{
+    width: 40px;
 }

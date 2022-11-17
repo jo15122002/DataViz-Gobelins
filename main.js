@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
             displaySlideBus();
         });
     });
-
-    displaySlideBus();
 });
 
 function displaySlideBus(){
@@ -42,7 +40,7 @@ function displaySlideBus(){
         passenger.remove()
     });
 
-    const BUS = document.querySelector('.bus');
+    const BUS = document.querySelector('.bus-slide2');
     numSlide = 2;
     container = document.querySelector('slide'+numSlide);
 
@@ -54,6 +52,13 @@ function displaySlideBus(){
         let passenger = document.createElement('div');
         BUS.appendChild(passenger);
         passenger.classList.add('passenger');
+
+        if(i >= numberOfPassengers/2){
+            passenger.classList.add('passenger-girl');
+        }else{
+            passenger.classList.add('passenger-boy')
+        }
+
         setTimeout(() => {
             if(Math.floor(i/numberOfSeatsPerlines) > (((numberOfLines - 1)/2.0))){
                 centerLineOffset = (100/numberOfLines);
@@ -66,6 +71,84 @@ function displaySlideBus(){
             goToPlace(passenger, x1, y, x2);
         }, i*200);
     }
+
+    setTimeout(() => {
+        fillEmUp();
+    }, numberOfPassengers * 200);
+}
+
+function fillEmUp(){
+    //Filles 23% garcons 11%
+
+    boys = document.querySelectorAll(".passenger-boy");
+    girls = document.querySelectorAll(".passenger-girl");
+
+    boys.forEach((element, index) =>{
+        fillDiv = document.createElement("div")
+        element.appendChild(fillDiv);
+        fillDiv.classList.add("fillPassenger")
+    })
+
+    girls.forEach((element, index) =>{
+        fillDiv = document.createElement("div")
+        element.appendChild(fillDiv);
+        fillDiv.classList.add("fillPassenger")
+    })
+
+    boysToFill = [
+        boys[0], boys[10]
+    ]
+
+    girlsToFill = [
+        girls[0], girls[10], girls[1], girls[11], girls[2], girls[12]
+    ]
+
+    boysToFill.forEach((element, index) => {
+        setTimeout(() => {
+            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-width", 100 + '%')
+            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-color", 'blue')
+        }, index*200);
+    });
+
+    girlsToFill.forEach((element, index) => {
+        setTimeout(() => {
+            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-width", 100 + '%')
+            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-color", 'pink')
+        }, index*200);
+    });
+
+    // let toggle = true
+    // let boysBack = []
+    // //reformattage des tableaux
+    // for(i = 0; i < boys.length/2; i++){
+    //     boysBack[i] = boys[i];
+    //     boysBack[i+1] = boys[i + 10];
+    // }
+    // console.log(boysBack)
+
+    // boys.forEach((element, index) =>{
+    //     console.log(element, index)
+    //     fillDiv = element.createElement("div")
+    //     fillDiv.classList.add("fillPassenger")
+
+    //     statPourcents = 23
+    //     setTimeout(() => {
+    //         element.querySelector(".passengerFill").style.setProperty("--passenger-fill-width", statPourcents + '%')
+    //         element.style.setProperty("--passenger-after-color", '#0000FF')
+    //     }, index%numberOfSeatsPerlines * 200);
+    // })
+
+    // girls.forEach((element, index) =>{
+    //     console.log(element, index)
+    //     console.log(index%numberOfPassengers)
+    //     //Todo donnée à changer par donnée de json
+    //     if((index%numberOfSeatsPerlines) < Math.ceil(23/100*girls.length)/2 - Math.floor(index/(numberOfSeatsPerlines*numberOfLines/2))){
+    //         setTimeout(() => {
+    //             element.style.setProperty("--passenger-after-width", '100%')
+    //             element.style.setProperty("--passenger-after-color", '#FF00E0')
+    //         }, index%numberOfSeatsPerlines * 200);
+    //     }
+    // })
 }
 
 function goToPlace(passenger, x1, y, x2){
