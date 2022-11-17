@@ -79,7 +79,7 @@ function displaySlideBus(){
     busCote.style.opacity = "100%"
     foule.style.opacity = "100%"
     setTimeout(() => {
-        busCote.style.left = "50%"
+        busCote.style.left = "40%"
         setTimeout(() => {
             foule.style.opacity = "0%"
         }, 1000);
@@ -88,13 +88,16 @@ function displaySlideBus(){
     setTimeout(() => {
         for(let i = 0; i < numberOfPassengers; i++){
             let passenger = document.createElement('div');
+            let passengerImg = buildSVGBoy();
+            passengerImg.classList.add('passenger-img');
+            passenger.appendChild(passengerImg);
             BUS.appendChild(passenger);
             passenger.classList.add('passenger');
     
             if(i >= numberOfPassengers/2){
-                passenger.classList.add('passenger-girl');
+                passengerImg.classList.add('passenger-girl');
             }else{
-                passenger.classList.add('passenger-boy')
+                passengerImg.classList.add('passenger-boy')
             }
     
             setTimeout(() => {
@@ -109,9 +112,9 @@ function displaySlideBus(){
                 goToPlace(passenger, x1, y, x2);
                 if(i==numberOfPassengers-1){
                     setTimeout(() => {
-                        console.log("busGOGOGO")
                         busCote.style.left = "100%"
                         busCote.style.opacity = "0%"
+                        document.querySelector('#slide2 .percentage').style.opacity = '100%'
                     }, 2200);
                 }
             }, i*200);
@@ -120,7 +123,7 @@ function displaySlideBus(){
 
     setTimeout(() => {
         fillEmUp();
-    }, numberOfPassengers * 200 + 2000);
+    }, numberOfPassengers * 200 + 3000);
 }
 
 function fillEmUp(){
@@ -129,12 +132,6 @@ function fillEmUp(){
     boys = document.querySelectorAll(".passenger-boy");
     girls = document.querySelectorAll(".passenger-girl");
 
-    boys.forEach((element, index) =>{
-        fillDiv = document.createElement("div")
-        element.appendChild(fillDiv);
-        fillDiv.classList.add("fillPassenger")
-    })
-
     girls.forEach((element, index) =>{
         fillDiv = document.createElement("div")
         element.appendChild(fillDiv);
@@ -142,24 +139,22 @@ function fillEmUp(){
     })
 
     boysToFill = [
-        boys[0], boys[10]
+        boys[9]
     ]
 
     girlsToFill = [
-        girls[0], girls[10], girls[1], girls[11], girls[2], girls[12]
+        girls[9], girls[8], girls[7]
     ]
 
     boysToFill.forEach((element, index) => {
         setTimeout(() => {
-            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-width", 100 + '%')
-            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-color", 'blue')
+            element.style.fill = BOYSCOLOR
         }, index*200);
     });
 
     girlsToFill.forEach((element, index) => {
         setTimeout(() => {
-            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-width", 100 + '%')
-            element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-color", 'pink')
+            element.style.fill = GIRLSCOLOR
         }, index*200);
     });
 }
@@ -167,7 +162,7 @@ function fillEmUp(){
 function goToPlace(passenger, x1, y, x2){
     passenger.style.top = x1
     setTimeout(() => {
-        passenger.style.left = y
+        passenger.style.right = y
         setTimeout(() => {
             passenger.style.top = x2
         }, 200);
