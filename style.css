@@ -105,3 +105,27 @@ footer{
     text-align: center;
     line-height: 50px;
 }
+
+/*Slide Bus*/
+.bus{
+    background-color: yellow;
+    
+    width: 50%;
+    height: 45%;
+    margin: auto;
+    margin-top: 10%;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.passenger{
+    background-color: blue;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 5%;
+    height: 12.5%;
+    border: 1px solid black;
+    transition: all ease-in-out 0.2s;
+}
