@@ -11,13 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let btns_slides = document.querySelectorAll('.btn-slide');
     let btn_next = document.querySelector('.next');
     let btn_prev = document.querySelector('.prev');
-    let timeline = document.querySelector('.barre-etat');
+
 
     if(slide_state >= 2){
         btn_prev.style.display = 'inline-block';
     }
 
-    btn_next.addEventListener('click',() => {
+    btn_next.addEventListener('click',(event) => {
+        console.log('click next')
+        event.preventDefault();
         slide_state+=1;
         console.log(slide_state);
         if(slide_state >= 2){
@@ -27,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    btn_prev.addEventListener('click', () => {
+    btn_prev.addEventListener('click', (event) => {
+        event.preventDefault();
         slide_state -= 1;
         console.log(slide_state);
         if(slide_state <= 2 ){
@@ -206,6 +209,10 @@ function busAnimation(){
 
     setTimeout(() => {
         bus.classList.add('animate__bounceOutRight');
+
+        setTimeout(() =>{
+            bus.style.display = 'none';
+        }, 1000);
     }, 3500);
 
     setTimeout(() => {
@@ -214,6 +221,9 @@ function busAnimation(){
         document.querySelector('.next').style.display = 'inline-block';
         document.getElementById('slide'+slide_state).scrollIntoView();
     }, 4000);
+
+
+
 }
 
 function displaySlideSchool(){
