@@ -107,39 +107,6 @@ function fillEmUp(){
             element.querySelector('.fillPassenger').style.setProperty("--passenger-fill-color", 'pink')
         }, index*200);
     });
-
-    // let toggle = true
-    // let boysBack = []
-    // //reformattage des tableaux
-    // for(i = 0; i < boys.length/2; i++){
-    //     boysBack[i] = boys[i];
-    //     boysBack[i+1] = boys[i + 10];
-    // }
-    // console.log(boysBack)
-
-    // boys.forEach((element, index) =>{
-    //     console.log(element, index)
-    //     fillDiv = element.createElement("div")
-    //     fillDiv.classList.add("fillPassenger")
-
-    //     statPourcents = 23
-    //     setTimeout(() => {
-    //         element.querySelector(".passengerFill").style.setProperty("--passenger-fill-width", statPourcents + '%')
-    //         element.style.setProperty("--passenger-after-color", '#0000FF')
-    //     }, index%numberOfSeatsPerlines * 200);
-    // })
-
-    // girls.forEach((element, index) =>{
-    //     console.log(element, index)
-    //     console.log(index%numberOfPassengers)
-    //     //Todo donnée à changer par donnée de json
-    //     if((index%numberOfSeatsPerlines) < Math.ceil(23/100*girls.length)/2 - Math.floor(index/(numberOfSeatsPerlines*numberOfLines/2))){
-    //         setTimeout(() => {
-    //             element.style.setProperty("--passenger-after-width", '100%')
-    //             element.style.setProperty("--passenger-after-color", '#FF00E0')
-    //         }, index%numberOfSeatsPerlines * 200);
-    //     }
-    // })
 }
 
 function goToPlace(passenger, x1, y, x2){
