@@ -262,15 +262,17 @@ function displaySlideSchool(){
 }
 
 function fillPercentageOfPeople(percentageValue, divPeoples, peopleConcerned, color){
+    console.log(percentageValue);
     let relative_percentage = Math.round(percentageValue*divPeoples)/100;
     for ( let i = 0 ; i < relative_percentage; i++ ){
         setTimeout(() => {
             let people_concerned = document.querySelector('.'+peopleConcerned+'-'+i);
+            console.log(people_concerned)
             people_concerned.style.fill = color;
         }, 100*i);
     }
 
-    for ( let i = 0 ; i < percentageValue; i++ ){
+    for ( let i = 1 ; i <= percentageValue; i++ ){
         setTimeout(() => {
             let percentage = document.querySelector('.percentage-'+peopleConcerned);
             percentage.innerText = i+'%'
@@ -327,4 +329,83 @@ function buildSVGBoy(){
 
     return svg;
 
+}
+
+function displaySlideHouse(){
+    bus = document.querySelector('#slide4 .bus');
+    kids = document.querySelector('#slide4 .kids');
+    house = document.querySelector('#slide4 .houseContainer');
+
+    bus.style.opacity = '0%'
+    bus.style.left = '0%'
+    kids.style.opacity = '0%'
+
+    bus.style.opacity = '100%'
+    bus.style.left = '10%'
+
+    setTimeout(() => {
+        kids.style.opacity = "100%"
+    }, 1000);
+
+    setTimeout(() => {
+        bus.style.opacity = "0%"
+        bus.style.left = "100%"
+        kids.style.opacity = "100%"
+        setTimeout(() => {
+            kids.style.left = house.offsetLeft + house.offsetWidth/3 + 'px';
+            setTimeout(() => {
+                kids.style.bottom = kids.offsetBottom * house.offsetHeight/2 + 'px';
+                kids.style.scale = "0.5"
+                kids.style.opacity = "0%"
+                setTimeout(() => {
+                    leon = kids.querySelector(".leon")
+                    sarah = kids.querySelector(".sarah")
+                    houseInside = document.querySelector("#slide4 .house-inside")
+                    houseImg = document.querySelector('#slide4 .houseImg')
+                    houseContainer = document.querySelector('#slide4 .houseContainer')
+                    houseInside.appendChild(leon)
+                    houseInside.appendChild(sarah)
+
+                    leon.style.top = "20%"
+                    leon.style.left = "8%"
+
+                    sarah.style.top = "20%"
+                    sarah.style.left = "53%"
+                    
+                    houseInside.style.opacity = "100%"
+
+                    houseInside.addEventListener('click', () => {
+                        houseContainer.style.scale = '2'
+                        houseContainer.style.bottom = '-10%'
+                        houseContainer.style.left = '30%'
+
+                        setTimeout(() => {
+                            percentBoys = document.createElement("div")
+                            percentBoys.classList.add("percentage-boyHouse")
+                            percentBoys.classList.add("percentage-boy")
+                            houseContainer.appendChild(percentBoys)
+
+                            percentGirls = document.createElement("div")
+                            percentGirls.classList.add("percentage-girlHouse")
+                            percentGirls.classList.add("percentage-girl")
+                            houseContainer.appendChild(percentGirls)
+
+                            percentBoysContainer = document.createElement("div")
+                            percentBoysContainer.classList.add("percentBoyContainer")
+                            houseContainer.appendChild(percentBoysContainer)
+                            boys = generateGroupeOfPeolpleSVG(50, percentBoysContainer, 'boyHouse')
+
+                            percentGirlsContainer = document.createElement("div")
+                            percentGirlsContainer.classList.add("percentGirlContainer")
+                            houseContainer.appendChild(percentGirlsContainer)
+                            girls = generateGroupeOfPeolpleSVG(50, percentGirlsContainer, 'girlHouse')
+
+                            fillPercentageOfPeople(13, 50, 'boyHouse', BOYSCOLOR)
+                            fillPercentageOfPeople(20, 50, 'girlHouse', GIRLSCOLOR)
+                        }, 1000);
+                    })
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    }, 2000);
 }

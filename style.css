@@ -320,7 +320,7 @@ footer .btn-launch{
 #slide2 .percentage{
     position: absolute;
     left: 16%;
-    top: 33%;
+    top: 23%;
     opacity: 0%;
     transition: all 0.5s ease;
 }
@@ -331,4 +331,114 @@ footer .btn-launch{
 
 #slide2 .percentage-girl{
     margin-top: 103%;
+}
+
+/*House slide*/
+#slide4{
+    position: relative;
+}
+
+.houseContainer{
+    transition: all 1s ease;
+    position: absolute;
+    height: 60%;
+    left: 40%;
+    bottom: 20%;
+    transform-origin: 50% 50%;
+    margin: auto;
+}
+
+.houseImg{
+    position: relative;
+    height: 100%;
+}
+
+#slide4 .bus{
+    transition: all 1s ease-out;
+    position: absolute;
+    opacity: 0%;
+    left: 0%;
+    bottom: 20%;
+    width: 45%;
+}
+
+#slide4 .kids{
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    height: 15%;
+    left: 20%;
+    position: absolute;
+    bottom: 25%;
+    opacity: 0%;
+}
+
+#slide4 .house-inside{
+    transition: all 1s ease;
+    opacity: 0%;
+    position: absolute;
+    height: 48%;
+    left: 24%;
+    bottom: 20%;
+}
+
+#slide4 .house-inside-img{
+    height: 100%;
+}
+
+#slide4 .houseContainer .kid{
+    position: absolute;
+    width: 20%;
+}
+
+#slide4 .kids .kid{
+    width: 100%;
+    height: 100%;
+}
+
+#slide4 .percentage-boyHouse{
+    transition: 1s ease all;
+    position: absolute;
+    top: 13%;
+    left: 30%;
+}
+
+#slide4 .percentage-girlHouse{
+    transition: 1s ease all;
+    position: absolute;
+    top: 13%;
+    left: 58%;
+}
+
+#slide4 .percentBoyContainer{
+    background-color: #faf8f1;
+    position: absolute;
+    top: 37.6%;
+    left: 37.8%;
+    width: 11%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#slide4 .percentBoyContainer .boyHouse{
+    width: 10%;
+    height: 10%;
+}
+
+#slide4 .percentGirlContainer{
+    background-color: #faf8f1;
+    position: absolute;
+    top: 38%;
+    left: 61%;
+    width: 11%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#slide4 .percentGirlContainer .girlHouse{
+    width: 10%;
+    height: 10%;
 }
