@@ -35,40 +35,63 @@ function displaySlideBus(){
     });
 
     const BUS = document.querySelector('.bus-slide2');
-    numSlide = 2;
-    container = document.querySelector('slide'+numSlide);
-
-    numberOfPassengers = 40.0;
-    numberOfLines = 4.0;
+    numberOfPassengers = 20.0;
+    numberOfLines = 2.0;
     numberOfSeatsPerlines = numberOfPassengers / numberOfLines;
 
-    for(let i = 0; i < numberOfPassengers; i++){
-        let passenger = document.createElement('div');
-        BUS.appendChild(passenger);
-        passenger.classList.add('passenger');
+    foule = document.querySelector(".foule-slide2")
 
-        if(i >= numberOfPassengers/2){
-            passenger.classList.add('passenger-girl');
-        }else{
-            passenger.classList.add('passenger-boy')
-        }
+    busCote = document.querySelector('.bus-cote-slide2')
+    console.log(busCote)
 
+    busCote.style.left = "0%"
+    busCote.style.opacity = "0%"
+
+    busCote.style.opacity = "100%"
+    foule.style.opacity = "100%"
+    setTimeout(() => {
+        busCote.style.left = "50%"
         setTimeout(() => {
-            if(Math.floor(i/numberOfSeatsPerlines) > (((numberOfLines - 1)/2.0))){
-                centerLineOffset = (100/numberOfLines);
+            foule.style.opacity = "0%"
+        }, 1000);
+    }, 1000);
+
+    setTimeout(() => {
+        for(let i = 0; i < numberOfPassengers; i++){
+            let passenger = document.createElement('div');
+            BUS.appendChild(passenger);
+            passenger.classList.add('passenger');
+    
+            if(i >= numberOfPassengers/2){
+                passenger.classList.add('passenger-girl');
             }else{
-                centerLineOffset = 0;
+                passenger.classList.add('passenger-boy')
             }
-            x1 = (2*(100/numberOfLines)) * 0.8 + "%";
-            y = ((i % numberOfSeatsPerlines) * (100/numberOfSeatsPerlines)) + (passenger.offsetWidth / (numberOfSeatsPerlines)) + '%';
-            x2 = ((Math.floor(i/numberOfSeatsPerlines)) * (100/numberOfLines)) * 0.8 + 1 + centerLineOffset + '%';
-            goToPlace(passenger, x1, y, x2);
-        }, i*200);
-    }
+    
+            setTimeout(() => {
+                if(Math.floor(i/numberOfSeatsPerlines) > (((numberOfLines - 1)/2.0))){
+                    centerLineOffset = (100/numberOfLines);
+                }else{
+                    centerLineOffset = 0;
+                }
+                x1 = (2*(100/numberOfLines)) * 0.8 + "%";
+                y = ((i % numberOfSeatsPerlines) * (100/numberOfSeatsPerlines)) + (passenger.offsetWidth / (numberOfSeatsPerlines)) + '%';
+                x2 = ((Math.floor(i/numberOfSeatsPerlines)) * (100/numberOfLines)) * 0.8 + 1 + centerLineOffset + '%';
+                goToPlace(passenger, x1, y, x2);
+                if(i==numberOfPassengers-1){
+                    setTimeout(() => {
+                        console.log("busGOGOGO")
+                        busCote.style.left = "100%"
+                        busCote.style.opacity = "0%"
+                    }, 2200);
+                }
+            }, i*200);
+        }
+    }, 2000);
 
     setTimeout(() => {
         fillEmUp();
-    }, numberOfPassengers * 200);
+    }, numberOfPassengers * 200 + 2000);
 }
 
 function fillEmUp(){
@@ -240,13 +263,17 @@ function clearSvg(number_of_people, peopleConcerned){
 }
 
 function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className){
+    let generatedPeoples = []
 
     for(let i=0; i<numberOfPeople; i++){
         let svg = buildSVGBoy();
         svg.classList.add(className+'-'+i);
         svg.classList.add(className);
         parent.appendChild(svg);
+        generatedPeoples.push(svg);
     }
+
+    return generatedPeoples;
 }
 
 function buildSVGBoy(){
