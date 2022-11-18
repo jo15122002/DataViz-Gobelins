@@ -189,6 +189,23 @@ p{
     height: 100%;
 }
 
+.logos{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.logo{
+    width: 5%;
+    height: 5%;
+}
+
+.logo-gobelins{
+    width: 7%;
+}
+
 
 /*Page école*/
 
