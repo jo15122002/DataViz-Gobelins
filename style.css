@@ -565,6 +565,22 @@ footer .btn-launch{
     margin-top: 103%;
 }
 
+@media(max-width : 1200px){
+    #slide2 .bus-interieur-slide2{
+        width: 46%;
+        top: 35%;
+    }
+
+    #slide2 .percentage{
+        top: 31%;
+    }
+
+    #slide2 .percentage .percentage-girl-bus{
+        margin-top: 83%;
+    }
+}
+
+
 /*House slide*/
 #slide4{
     position: relative;
