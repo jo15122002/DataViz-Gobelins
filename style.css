@@ -435,9 +435,9 @@ p{
 
 .fight-trace{
     position: absolute;
-    width: 6%;
-    left: 59%;
-    top: 32%;
+    width: 10%;
+    left: 18%;
+    top: 134px;
 }
 
 .ignored-trace{
@@ -609,11 +609,6 @@ p{
         left: 64%;
     }
 
-    .fight-trace{
-        width: 10%;
-        left: 18%;
-        top: 134px;
-    }
 
     .sexist-trace{
         width: 13%;
