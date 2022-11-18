@@ -674,3 +674,132 @@ footer .btn-launch{
     width: 10%;
     height: 10%;
 }
+
+/*Slide de fin*/
+#slide5 .boy, #slide5 .girl{
+    position: absolute;
+}
+
+#slide5 .content{
+    margin-left: 7%;
+    margin-top: 9%;
+}
+
+#slide5 .boy{
+    width: 110px;
+    height: 125px;
+    top: 2%;
+    left: 29%;
+    transform: rotate(-6deg);
+}
+
+#slide5 .girl{
+    width: 127px;
+    height: 124px;
+    top: 7%;
+    left: 36%;
+    transform: rotate(7deg);
+}
+
+#slide5 .boy .boy-logo, #slide5 .girl .girl-logo{
+    width: 100%;
+    height: 100%;
+}
+
+#slide5 .desc-prevention strong, #slide5 .desc-prevention-maj{
+    text-transform: uppercase;
+}
+
+#slide5 .desc-prevention-maj{
+    margin-top: 31px;
+    margin-bottom: 86px;
+}
+
+#slide5 .desc-prevention-maj, #slide5 .desc-prevention{
+    width: 75%;
+}
+
+#slide5 .desc-prevention .orange{
+    color: #FF791F;
+}
+
+#slide5 .desc-prevention-maj .purple{
+    color: #9712DD;
+}
+
+.number-content{
+    display:flex;
+}
+
+.number{
+    display: flex;
+    flex-direction: column;
+}
+
+.number h1{
+    margin-bottom: 10px;
+}
+
+.number .number-desc{
+    width: 60%;
+    padding-left: 3%;
+}
+
+.number .number-desc-container{
+    display:flex;
+    margin-top: 10px;
+    position: relative;
+}
+
+.number .number-desc-container:before{
+    content: '';
+    top: -22%;
+    width: 72%;
+    height: 3px;
+    position: absolute;
+    background-color: #332b36;
+}
+
+.number .number-desc-container:after{
+    content: '';
+    width: 72%;
+    height: 3px;
+    position: absolute;
+    background-color: #332b36;
+    bottom: -14%;
+}
+
+.number .number-desc-container .number-title{
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    font-weight: bold;
+}
+
+.number .buble{
+    width: 43px;
+    height:37px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.dog{
+    position: absolute;
+    width: 10%;
+    transform: rotate(3deg);
+    bottom: 16%;
+    right: 5%;
+}
+
+.orange-trace{
+    position: absolute;
+    top: 29%;
+    left: 31%;
+    width: 6%;
+}
+
+.purple-trace{
+    width: 9%;
+    position: absolute;
+    top: 36%;
+    left: 33%;
+}
