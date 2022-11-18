@@ -249,8 +249,8 @@ function displaySlideSchool(){
     let btn_ignored = document.querySelector('.btn-ignored');
     let btn_sexist = document.querySelector('.btn-sexist');
 
-    generateGroupeOfPeolpleSVG(50,boys_students,'boy-school');
-    generateGroupeOfPeolpleSVG(50,girls_students,'girl-school');
+    generateGroupeOfPeolpleSVG(11,boys_students,'boy-school');
+    generateGroupeOfPeolpleSVG(11,girls_students,'girl-school');
 
     /*To do : mettre ces données dans un fichier JSON*/
     let percentage_fight_girl = 11;
