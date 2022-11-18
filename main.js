@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     displaySlideHome();
-    displaySlideBus();
     displaySlideSchool();
 });
 
@@ -73,17 +72,22 @@ function displaySlideBus(){
 
     foule = document.querySelector(".foule-slide2")
 
+    busInterieur = document.querySelector('#slide2 .bus-interieur-slide2')
+
     busCote = document.querySelector('.bus-cote-slide2')
     console.log(busCote)
 
     busCote.style.left = "0%"
     busCote.style.opacity = "0%"
 
+    busInterieur.style.opacity = "0%"
+
     busCote.style.opacity = "100%"
     foule.style.opacity = "100%"
     setTimeout(() => {
         busCote.style.left = "40%"
         setTimeout(() => {
+            busInterieur.style.opacity = "100%"
             foule.style.opacity = "0%"
         }, 1000);
     }, 1000);

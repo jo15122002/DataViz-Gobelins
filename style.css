@@ -109,8 +109,6 @@ a{
     height: 100%;
 }
 
-
-
 .slide-home .boy .name, .slide-home .girl .name{
     font-family: 'Podkova', serif;
     font-size: 48px;
@@ -290,13 +288,19 @@ footer .btn-launch{
     width: 40px;
 }
 
+#slide2 .bus-interieur-slide2{
+    position: absolute;
+    width: 43%;
+    left: 25%;
+    top: 17%;
+    opacity: 0%;
+    transition: 1s ease all;
+}
+
 .bus-cote-slide2{
     transition: 1s ease-out;
     position: absolute;
     width: 20%;
-    height: 10%;
-    background-color: yellow;
-    border: 2px solid black;
     top: auto;
     bottom: 20%;
     left: 0%;
@@ -308,10 +312,11 @@ footer .btn-launch{
     transform-origin: 0% 100%;
     width: 10%;
     height: 10%;
-    background-color: purple;
     bottom: 20%;
     top: auto;
     left: 50%;
+    opacity: 100%;
+    transition: all 1s ease;
 }
 
 .passenger-img{
