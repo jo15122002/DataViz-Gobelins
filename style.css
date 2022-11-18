@@ -124,7 +124,7 @@ p{
     font-family: 'Podkova', serif;
 }
 
-.sourceContainer{
+/* .sourceContainer{
     display: none;
     height: 7%;
     position: absolute;
@@ -146,7 +146,7 @@ p{
     color: white;
     display: flex;
     align-items: center;
-}
+} */
 
 /* Page d'accueil */
 .slide-home h1 {
