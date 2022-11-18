@@ -436,22 +436,22 @@ p{
 .fight-trace{
     position: absolute;
     width: 10%;
-    left: 169px;
+    left: 142px;
     top: 134px;
 }
 
 .ignored-trace{
     position: absolute;
-    width: 8%;
-    left: 72%;
-    top: 29%;
+    width: 15%;
+    left: 339px;
+    top: 111px;
 }
 
 .sexist-trace{
     position: absolute;
-    width: 12%;
-    top: 32%;
-    left: 60%;
+    width: 17%;
+    top: 136px;
+    left: 185px;
 
 }
 
@@ -602,18 +602,6 @@ p{
         width: 20%;
         top: 19%;
         left: 10%;
-    }
-
-    .ignored-trace{
-        top: 31%;
-        left: 64%;
-    }
-
-
-    .sexist-trace{
-        width: 13%;
-        top: 35%;
-        left: 61%;
     }
 
     #slide3 .percentage-boy-school{
