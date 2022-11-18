@@ -993,7 +993,7 @@ footer .btn-launch{
     left: 76%;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1350px){
     #slide4 .doggo-slide4{
         left: 45%;
     }
@@ -1155,11 +1155,11 @@ footer .btn-launch{
         left: 43%;
     }
 
-    .content{
+    #slide5 .content{
         margin-top:4%;
     }
 
-    .desc-prevention-maj{
+    #slide5 .desc-prevention-maj{
         margin-bottom: 46px;
     }
 
