@@ -1156,7 +1156,7 @@ footer .btn-launch{
     }
 
     #slide5 .content{
-        margin-top:4%;
+        margin-top:2%;
     }
 
     #slide5 .desc-prevention-maj{
@@ -1164,13 +1164,18 @@ footer .btn-launch{
     }
 
     .orange-trace{
-        left: 45%;
-        top: 24%;
+        left: 38%;
+        top: 21%;
     }
 
     .purple-trace{
         top: 29%;
-        left: 32%;
+        left: 36%;
+    }
+
+    .dog{
+        bottom: 29%;
+        right: 3%;
     }
 }
 
