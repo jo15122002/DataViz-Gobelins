@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
 
-    document.querySelector('.btn-restart').addEventListener('click', () =>{
+/*    document.querySelector('.btn-restart').addEventListener('click', () =>{
         document.getElementById('slide1').scrollIntoView();
-    })
+    })*/
 
     displaySlideHome();
 
