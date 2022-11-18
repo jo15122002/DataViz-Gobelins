@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.querySelector('.btn-credit').addEventListener('click', () =>{
+/*    document.querySelector('.btn-credit').addEventListener('click', () =>{
         slide_state += 1;
         document.getElementById('slide'+slide_state).scrollIntoView();
-    });
+    });*/
 
     btn_prev.addEventListener('click', (event) => {
         slide_state -= 1;
