@@ -769,3 +769,9 @@ footer .btn-launch{
     margin-top: 20px;
     font-weight: bold;
 }
+
+#slide4 .ligne-slide4{
+    position: absolute;
+    width: 100%;
+    bottom: 12.25%;
+}
