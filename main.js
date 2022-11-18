@@ -406,6 +406,10 @@ function displaySlideHouse(){
                     houseInside.addEventListener('click', () => {
                         //document.querySelector(".next").style.zIndex = '10'
                         //document.querySelector(".prev").style.zIndex = '10'
+
+                        document.querySelector(".doggo-slide4").style.opacity = "0%"
+                        document.querySelector(".sapin-slide4").style.opacity = "0%"
+                        document.querySelector(".sapin2-slide4").style.opacity = "0%"    
                         console.log(document.querySelector(".next"))
                         console.log(document.querySelector(".prev"))
 

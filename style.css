@@ -789,6 +789,7 @@ footer .btn-launch{
 }
 
 #slide4 .doggo-slide4{
+    opacity: 100%;
     position: absolute;
     width: 5%;
     top: 54%;
@@ -796,12 +797,14 @@ footer .btn-launch{
 }
 
 #slide4 .sapin-slide4{
+    opacity: 100%;
     position: absolute;
     top: 33%;
     left: 33%;
 }
 
 #slide4 .sapin2-slide4{
+    opacity: 100%;
     position: absolute;
     top: 33%;
     left: 76%;
