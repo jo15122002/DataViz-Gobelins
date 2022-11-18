@@ -124,6 +124,29 @@ p{
     font-family: 'Podkova', serif;
 }
 
+.sourceContainer{
+    height: 7%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sourceStart{
+}
+
+.sourceEnd{
+}
+
+.sourceContent{
+    font-family: 'Podkova', serif;
+    background-color: #332b36;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
 /* Page d'accueil */
 .slide-home h1 {
     font-size: 108px;
