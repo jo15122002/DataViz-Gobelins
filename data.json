@@ -1,0 +1,24 @@
+{
+    "slide-2":{
+        "garçon" : 11,
+        "fille" : 23
+    },
+    "slide-3":{
+        "bagarre":{
+            "garçon" : 21,
+            "fille" : 11
+        },
+        "rejet":{
+            "garçon" : 35,
+            "fille" : 42
+        },
+        "insultes":{
+            "garçon" : 6,
+            "fille" : 11
+        }
+    },
+    "slide-4":{
+        "garçon" : 13,
+        "fille" : 20
+    }
+}
