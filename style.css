@@ -473,6 +473,7 @@ p{
 #slide3 .col-droite{
     width: 50vw;
     padding-bottom: 4%;
+    position: relative;
 }
 
 #slide3 .buttons a{
@@ -561,9 +562,13 @@ p{
     margin-left: 10px;
 }
 
-@media(max-width: 1500px){
+@media(max-width: 1366px){
     .school{
         top: 13%;
+    }
+
+    #slide3 .col-gauche{
+        margin-top: -5%;
     }
 }
 
@@ -605,9 +610,9 @@ p{
     }
 
     .fight-trace{
-        width: 7%;
-        left: 58%;
-        top: 35%;
+        width: 10%;
+        left: 18%;
+        top: 134px;
     }
 
     .sexist-trace{
