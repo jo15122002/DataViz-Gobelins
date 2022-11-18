@@ -76,6 +76,20 @@ html{
     padding-top: 4px;
 }
 
+.btn-credit{
+    display: none;
+    font-size: 35px;
+    border: solid #332b36 5px;
+    color: #332b36;
+    border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    margin-top: 2%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 58px;
+    padding-top: 4px;
+}
+
 .prev {
     border-top-left-radius: 17px;
     border-bottom-right-radius: 17px;
@@ -228,6 +242,10 @@ p{
     .bus-stop{
         bottom: 20.5%;
         left: 25%;
+    }
+
+    .slide-home .bus-home{
+        top: 576px;
     }
 }
 
@@ -434,14 +452,15 @@ p{
 }
 
 #slide3 .buttons a{
+    transition: ease 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
     margin-left: 55%;
     border: #332b36 solid 5px;
-    background-color: #332b36;
-    color: white;
+    background-color: white;
+    color: #332b36;
     width: 197px;
 }
 
@@ -453,6 +472,16 @@ p{
 .btn-sexist, .btn-fight{
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+#slide3 .buttons a:hover{
+    background-color: #332b36;
+    color: white;
+}
+
+#slide3 .buttons a:hover img{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(18%) saturate(233%) hue-rotate(192deg) brightness(111%) contrast(108%);
+
 }
 
 #slide3 .students{
@@ -506,6 +535,12 @@ p{
     height: 42px;
     margin-top: 10px;
     margin-left: 10px;
+}
+
+@media(max-width: 1500px){
+    .school{
+        top: 13%;
+    }
 }
 
 @media(max-width: 1200px){
@@ -1117,5 +1152,8 @@ footer .btn-launch{
         top: 29%;
         left: 32%;
     }
+}
 
+#slide6{
+    background-color: #332b36;
 }

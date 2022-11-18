@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let btns_slides = document.querySelectorAll('.btn-slide');
     let btn_next = document.querySelector('.next');
     let btn_prev = document.querySelector('.prev');
-    let btn
 
     if(slide_state >= 2){
         btn_prev.style.display = 'inline-block';
@@ -32,10 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if(slide_state == 5){
             btn_next.style.display = "none";
             document.querySelector('.btn-restart').style.display="inline-block";
-
+            document.querySelector('.btn-credit').style.display="inline-block";
 
         }
+    });
 
+    document.querySelector('.btn-credit').addEventListener('click', () =>{
+        slide_state += 1;
+        document.getElementById('slide'+slide_state).scrollIntoView();
     });
 
     btn_prev.addEventListener('click', (event) => {
@@ -266,14 +269,12 @@ function displaySlideSchool(){
     let ignored_trace = document.querySelector('.ignored-trace');
     let sexist_trace = document.querySelector('.sexist-trace');
 
-    clearSvg(number_of_boy, 'boy-school');
-    clearSvg(number_of_girl, 'girl-school');
-    fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy-school', BOYSCOLOR);
-    fillPercentageOfPeople(percentage_fight_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
+    fight_trace.style.display = 'none';
     ignored_trace.style.display = 'none';
     sexist_trace.style.display = 'none';
+    desc.innerText = "";
 
-    btn_fight.addEventListener('click', ()=>{
+        btn_fight.addEventListener('click', ()=>{
         clearSvg(number_of_boy, 'boy-school');
         clearSvg(number_of_girl, 'girl-school');
         fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy-school', BOYSCOLOR);
