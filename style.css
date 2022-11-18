@@ -483,7 +483,7 @@ footer .btn-launch{
     color: #9712DD;
     font-size: 45px;
     font-family: 'Antonio', sans-serif;
-    margin-top: 20px;
+    margin-top: 75%;
     font-weight: bold;
 }
 
@@ -501,10 +501,10 @@ footer .btn-launch{
 
 .bus-slide2{
     background-color: transparent;
-    width: 35%;
+    width: 22%;
     height: 20%;
     left: 25%;
-    top: 10%;
+    top: 34%;
     position: relative;
     opacity: 100%;
     transition: all ease-in 1s;
@@ -532,9 +532,9 @@ footer .btn-launch{
 
 #slide2 .bus-interieur-slide2{
     position: absolute;
-    width: 43%;
+    width: 28%;
     left: 25%;
-    top: 17%;
+    top: 33%;
     opacity: 0%;
     transition: 1s ease all;
 }
@@ -552,9 +552,8 @@ footer .btn-launch{
 .foule-slide2{
     position: absolute;
     transform-origin: 0% 100%;
-    width: 10%;
     height: 10%;
-    bottom: 20%;
+    bottom: 22%;
     top: auto;
     left: 50%;
     opacity: 100%;
@@ -568,8 +567,8 @@ footer .btn-launch{
 
 #slide2 .percentage{
     position: absolute;
-    left: 16%;
-    top: 23%;
+    left: 18%;
+    top: 28%;
     opacity: 0%;
     transition: all 0.5s ease;
 }
@@ -579,7 +578,34 @@ footer .btn-launch{
 }
 
 #slide2 .percentage-girl{
-    margin-top: 103%;
+    margin-top: 75%;
+}
+
+#slide2 .ligne-slide2{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 22%;
+}
+
+#slide2 .bus-stop-slide2{
+    position: absolute;
+    height: 20%;
+    width: auto;
+    bottom: 19%;
+    left: 61%;
+}
+
+#slide2 .titre-slide-bus{
+    width: 50%;
+    position: absolute;
+    left: 4%;
+}
+
+#slide2 h2{
+    position: absolute;
+    left: 4%;
+    top: 24%;
 }
 
 @media(max-width : 1200px){
