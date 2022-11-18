@@ -610,16 +610,36 @@ footer .btn-launch{
 
 @media(max-width : 1200px){
     #slide2 .bus-interieur-slide2{
-        width: 46%;
+        width: 36%;
         top: 35%;
     }
 
     #slide2 .percentage{
-        top: 31%;
+        top: 30%;
+        left: 15%;
     }
 
     #slide2 .percentage .percentage-girl-bus{
-        margin-top: 83%;
+        margin-top: 53%;
+    }
+
+    #slide2 .titre-slide-bus{
+        width: 70%;
+        font-size: 50px;
+    }
+
+    #slide2 h2{
+        top: 18%;
+    }
+
+    #slide2 .bus-slide2{
+        height: 15%;
+        top: 35.5%;
+        left: 26%;
+    }
+
+    #slide2 .passenger{
+        width: 8%;
     }
 }
 
