@@ -788,6 +788,35 @@ footer .btn-launch{
     left: 4%;
 }
 
+#slide4 .doggo-slide4{
+    position: absolute;
+    width: 5%;
+    top: 54%;
+    left: 41%;
+}
+
+#slide4 .sapin-slide4{
+    position: absolute;
+    top: 33%;
+    left: 33%;
+}
+
+#slide4 .sapin2-slide4{
+    position: absolute;
+    top: 33%;
+    left: 76%;
+}
+
+@media(max-width: 1200px){
+    #slide4 .doggo-slide4{
+        left: 45%;
+    }
+    
+    #slide4 .sapin2-slide4{
+        left: 90%;
+    }
+}
+
 /*Slide de fin*/
 #slide5 .boy, #slide5 .girl{
     position: absolute;

@@ -404,7 +404,12 @@ function displaySlideHouse(){
                     houseInside.style.opacity = "100%";
 
                     houseInside.addEventListener('click', () => {
-                        houseContainer.style.zIndex = '999'
+                        document.querySelector(".next").style.zIndex = '10'
+                        document.querySelector(".prev").style.zIndex = '10'
+                        console.log(document.querySelector(".next"))
+                        console.log(document.querySelector(".prev"))
+
+                        houseContainer.style.zIndex = '10'
                         houseContainer.style.scale = '2';
                         if(window.innerWidth <= 1200){
                             houseContainer.style.left = '21%';
