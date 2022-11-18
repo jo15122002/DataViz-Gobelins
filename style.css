@@ -76,7 +76,7 @@ html{
     padding-top: 4px;
 }
 
-.btn-credit{
+/* .btn-credit{
     display: none;
     font-size: 35px;
     border: solid #332b36 5px;
@@ -88,7 +88,7 @@ html{
     padding-right: 10px;
     height: 58px;
     padding-top: 4px;
-}
+} */
 
 .prev {
     border-top-left-radius: 17px;
@@ -123,6 +123,30 @@ p{
     font-size: 24px;
     font-family: 'Podkova', serif;
 }
+
+/* .sourceContainer{
+    display: none;
+    height: 7%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.sourceStart{
+}
+
+.sourceEnd{
+}
+
+.sourceContent{
+    font-family: 'Podkova', serif;
+    background-color: #332b36;
+    color: white;
+    display: flex;
+    align-items: center;
+} */
 
 /* Page d'accueil */
 .slide-home h1 {
