@@ -406,8 +406,13 @@ function displaySlideHouse(){
                     houseInside.addEventListener('click', () => {
                         houseContainer.style.zIndex = '999'
                         houseContainer.style.scale = '2';
-                        houseContainer.style.bottom = '-10%';
-                        houseContainer.style.left = '30%';
+                        if(window.innerWidth <= 1200){
+                            houseContainer.style.left = '21%';
+                            houseContainer.style.bottom = '-5%';
+                        }else{
+                            houseContainer.style.bottom = '-10%';
+                            houseContainer.style.left = '30%';
+                        }
 
                         setTimeout(() => {
                             percentBoys = document.createElement("div");
