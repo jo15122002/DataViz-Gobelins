@@ -12,27 +12,25 @@ document.addEventListener('DOMContentLoaded', function() {
     let btn_next = document.querySelector('.next');
     let btn_prev = document.querySelector('.prev');
 
-
     if(slide_state >= 2){
         btn_prev.style.display = 'inline-block';
     }
 
     btn_next.addEventListener('click',(event) => {
-        console.log('click next')
-        event.preventDefault();
         slide_state+=1;
-        console.log(slide_state);
         if(slide_state >= 2){
             btn_prev.style.display = 'inline-block';
             document.getElementById('slide'+slide_state).scrollIntoView();
             document.querySelector('.barre-etat').src = 'img/barre-etat-'+slide_state+'.png';
         }
+
+        if(slide_state == 4){
+            displaySlideHouse();
+        }
     });
 
     btn_prev.addEventListener('click', (event) => {
-        event.preventDefault();
         slide_state -= 1;
-        console.log(slide_state);
         if(slide_state <= 2 ){
             btn_prev.style.display = 'none';
         }
@@ -47,17 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('slide1').scrollIntoView();
     })
 
-    btns_slides.forEach(btn_slide =>{
-        btn_slide.addEventListener('click', () => {
-            console.log(btn_slide.id);
-            document.getElementById('slide'+btn_slide.id).scrollIntoView();
-            displaySlideBus();
-        });
-    });
-
     displaySlideHome();
-    displaySlideBus();
+
     displaySlideSchool();
+
 });
 
 function displaySlideBus(){
@@ -71,20 +62,19 @@ function displaySlideBus(){
     numberOfLines = 2.0;
     numberOfSeatsPerlines = numberOfPassengers / numberOfLines;
 
-    foule = document.querySelector(".foule-slide2")
+    foule = document.querySelector(".foule-slide2");
 
-    busCote = document.querySelector('.bus-cote-slide2')
-    console.log(busCote)
+    busCote = document.querySelector('.bus-cote-slide2');
 
-    busCote.style.left = "0%"
-    busCote.style.opacity = "0%"
+    busCote.style.left = "0%";
+    busCote.style.opacity = "0%";
 
-    busCote.style.opacity = "100%"
-    foule.style.opacity = "100%"
+    busCote.style.opacity = "100%";
+    foule.style.opacity = "100%";
     setTimeout(() => {
-        busCote.style.left = "40%"
+        busCote.style.left = "40%";
         setTimeout(() => {
-            foule.style.opacity = "0%"
+            foule.style.opacity = "0%";
         }, 1000);
     }, 1000);
 
@@ -100,7 +90,7 @@ function displaySlideBus(){
             if(i >= numberOfPassengers/2){
                 passengerImg.classList.add('passenger-girl');
             }else{
-                passengerImg.classList.add('passenger-boy')
+                passengerImg.classList.add('passenger-boy');
             }
     
             setTimeout(() => {
@@ -115,9 +105,9 @@ function displaySlideBus(){
                 goToPlace(passenger, x1, y, x2);
                 if(i==numberOfPassengers-1){
                     setTimeout(() => {
-                        busCote.style.left = "100%"
-                        busCote.style.opacity = "0%"
-                        document.querySelector('#slide2 .percentage').style.opacity = '100%'
+                        busCote.style.left = "100%";
+                        busCote.style.opacity = "0%";
+                        document.querySelector('#slide2 .percentage').style.opacity = '100%';
                     }, 2200);
                 }
             }, i*200);
@@ -136,9 +126,9 @@ function fillEmUp(){
     girls = document.querySelectorAll(".passenger-girl");
 
     girls.forEach((element, index) =>{
-        fillDiv = document.createElement("div")
+        fillDiv = document.createElement("div");
         element.appendChild(fillDiv);
-        fillDiv.classList.add("fillPassenger")
+        fillDiv.classList.add("fillPassenger");
     })
 
     boysToFill = [
@@ -163,11 +153,11 @@ function fillEmUp(){
 }
 
 function goToPlace(passenger, x1, y, x2){
-    passenger.style.top = x1
+    passenger.style.top = x1;
     setTimeout(() => {
-        passenger.style.right = y
+        passenger.style.right = y;
         setTimeout(() => {
-            passenger.style.top = x2
+            passenger.style.top = x2;
         }, 200);
     }, 200);
 };
@@ -181,12 +171,17 @@ function displaySlideHome(){
     btn_start.addEventListener('click', ()=> {
 
         names.forEach(function (name){
-            name.classList.add('animate__fadeOut')
+            name.classList.add('animate__fadeOut');
         });
 
-        document.querySelector('.btn-launch').classList.add('animate__fadeOut');
+
+        document.querySelector('.btn-launch').style.display = "none";
         document.querySelector('.btn-launch').classList.remove('animate__infinite');
         busAnimation();
+
+        setTimeout(() => {
+            displaySlideBus();
+        },5000);
 
     });
 }
@@ -221,9 +216,6 @@ function busAnimation(){
         document.querySelector('.next').style.display = 'inline-block';
         document.getElementById('slide'+slide_state).scrollIntoView();
     }, 4000);
-
-
-
 }
 
 function displaySlideSchool(){
@@ -235,8 +227,8 @@ function displaySlideSchool(){
     let btn_ignored = document.querySelector('.btn-ignored');
     let btn_sexist = document.querySelector('.btn-sexist');
 
-    generateGroupeOfPeolpleSVG(50,boys_students,'boy');
-    generateGroupeOfPeolpleSVG(50,girls_students,'girl');
+    generateGroupeOfPeolpleSVG(50,boys_students,'boy-school');
+    generateGroupeOfPeolpleSVG(50,girls_students,'girl-school');
 
     /*To do : mettre ces données dans un fichier JSON*/
     let percentage_fight_girl = 11;
@@ -246,38 +238,61 @@ function displaySlideSchool(){
     let percentage_sexist_insult_boy = 6;
     let percentage_sexist_insult_girl = 11;
 
-    let number_of_boy = document.querySelectorAll('.boy').length;
-    let number_of_girl = document.querySelectorAll('.girl').length;
+    let number_of_boy = document.querySelectorAll('.boy-school').length;
+    let number_of_girl = document.querySelectorAll('.girl-school').length;
+
+    let desc = document.querySelector(".school-desc");
+
+    let fight_trace = document.querySelector('.fight-trace');
+    let ignored_trace = document.querySelector('.ignored-trace');
+    let sexist_trace = document.querySelector('.sexist-trace');
+
+    clearSvg(number_of_boy, 'boy-school');
+    clearSvg(number_of_girl, 'girl-school');
+    fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy-school', BOYSCOLOR);
+    fillPercentageOfPeople(percentage_fight_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
+    ignored_trace.style.display = 'none';
+    sexist_trace.style.display = 'none';
 
     btn_fight.addEventListener('click', ()=>{
-        clearSvg(number_of_boy, 'boy');
-        clearSvg(number_of_girl, 'girl');
-        fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy', BOYSCOLOR)
-        fillPercentageOfPeople(percentage_fight_girl, number_of_girl, 'girl', GIRLSCOLOR)
+        clearSvg(number_of_boy, 'boy-school');
+        clearSvg(number_of_girl, 'girl-school');
+        fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy-school', BOYSCOLOR);
+        fillPercentageOfPeople(percentage_fight_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
+        desc.innerText = "les garçons sont davantage impliqués et victimes des bagarres que les filles.";
+        ignored_trace.style.display = 'none';
+        sexist_trace.style.display = 'none';
+        fight_trace.style.display = 'inline-block';
     });
 
     btn_ignored.addEventListener('click', () => {
-        clearSvg(number_of_boy, 'boy');
-        clearSvg(number_of_girl, 'girl');
-        fillPercentageOfPeople(percentage_ignored_boy, number_of_boy, 'boy', BOYSCOLOR);
-        fillPercentageOfPeople(percentage_ignored_girl, number_of_girl, 'girl', GIRLSCOLOR);
+        clearSvg(number_of_boy, 'boy-school');
+        clearSvg(number_of_girl, 'girl-school');
+        fillPercentageOfPeople(percentage_ignored_boy, number_of_boy, 'boy-school', BOYSCOLOR);
+        fillPercentageOfPeople(percentage_ignored_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
+        desc.innerText = "les filles se sentent davantage mises à l’écart que les garçons.";
+        ignored_trace.style.display = 'inline-block';
+        sexist_trace.style.display = 'none';
+        fight_trace.style.display = 'none';
     })
 
     btn_sexist.addEventListener('click', () => {
-        clearSvg(number_of_boy,'boy');
-        clearSvg(number_of_girl, 'girl');
-        fillPercentageOfPeople(percentage_sexist_insult_boy, number_of_boy, 'boy', BOYSCOLOR);
-        fillPercentageOfPeople(percentage_sexist_insult_girl, number_of_girl, 'girl', GIRLSCOLOR);
+        clearSvg(number_of_boy,'boy-school');
+        clearSvg(number_of_girl, 'girl-school');
+        fillPercentageOfPeople(percentage_sexist_insult_boy, number_of_boy, 'boy-school', BOYSCOLOR);
+        fillPercentageOfPeople(percentage_sexist_insult_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
+        desc.innerText = "davantage de filles sont victimes de moqueries et d’insultes sexistes.";
+        ignored_trace.style.display = 'none';
+        sexist_trace.style.display = 'inline-block';
+        fight_trace.style.display = 'none';
     })
 }
 
 function fillPercentageOfPeople(percentageValue, divPeoples, peopleConcerned, color){
-    console.log(percentageValue);
     let relative_percentage = Math.round(percentageValue*divPeoples)/100;
-    for ( let i = 0 ; i < relative_percentage; i++ ){
+    for ( let i = 0 ; i < relative_percentage; i++){
         setTimeout(() => {
             let people_concerned = document.querySelector('.'+peopleConcerned+'-'+i);
-            console.log(people_concerned)
             people_concerned.style.fill = color;
         }, 100*i);
     }
@@ -285,7 +300,7 @@ function fillPercentageOfPeople(percentageValue, divPeoples, peopleConcerned, co
     for ( let i = 1 ; i <= percentageValue; i++ ){
         setTimeout(() => {
             let percentage = document.querySelector('.percentage-'+peopleConcerned);
-            percentage.innerText = i+'%'
+            percentage.innerText = i+'%';
         }, 50*i);
     }
 }
@@ -298,7 +313,7 @@ function clearSvg(number_of_people, peopleConcerned){
 }
 
 function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className){
-    let generatedPeoples = []
+    let generatedPeoples = [];
 
     for(let i=0; i<numberOfPeople; i++){
         let svg = buildSVGBoy();
@@ -338,7 +353,6 @@ function buildSVGBoy(){
     svg.appendChild(path4);
 
     return svg;
-
 }
 
 function displaySlideHouse(){
@@ -346,72 +360,72 @@ function displaySlideHouse(){
     kids = document.querySelector('#slide4 .kids');
     house = document.querySelector('#slide4 .houseContainer');
 
-    bus.style.opacity = '0%'
-    bus.style.left = '0%'
-    kids.style.opacity = '0%'
+    bus.style.opacity = '0%';
+    bus.style.left = '0%';
+    kids.style.opacity = '0%';
 
-    bus.style.opacity = '100%'
-    bus.style.left = '10%'
+    bus.style.opacity = '100%';
+    bus.style.left = '10%';
 
     setTimeout(() => {
-        kids.style.opacity = "100%"
+        kids.style.opacity = "100%";
     }, 1000);
 
     setTimeout(() => {
-        bus.style.opacity = "0%"
-        bus.style.left = "100%"
-        kids.style.opacity = "100%"
+        bus.style.opacity = "0%";
+        bus.style.left = "100%";
+        kids.style.opacity = "100%";
         setTimeout(() => {
             kids.style.left = house.offsetLeft + house.offsetWidth/3 + 'px';
             setTimeout(() => {
                 kids.style.bottom = kids.offsetBottom * house.offsetHeight/2 + 'px';
-                kids.style.scale = "0.5"
-                kids.style.opacity = "0%"
+                kids.style.scale = "0.5";
+                kids.style.opacity = "0%";
                 setTimeout(() => {
-                    leon = kids.querySelector(".leon")
-                    sarah = kids.querySelector(".sarah")
-                    houseInside = document.querySelector("#slide4 .house-inside")
-                    houseImg = document.querySelector('#slide4 .houseImg')
-                    houseContainer = document.querySelector('#slide4 .houseContainer')
-                    houseInside.appendChild(leon)
-                    houseInside.appendChild(sarah)
+                    leon = kids.querySelector(".leon");
+                    sarah = kids.querySelector(".sarah");
+                    houseInside = document.querySelector("#slide4 .house-inside");
+                    houseImg = document.querySelector('#slide4 .houseImg');
+                    houseContainer = document.querySelector('#slide4 .houseContainer');
+                    houseInside.appendChild(leon);
+                    houseInside.appendChild(sarah);
 
-                    leon.style.top = "20%"
-                    leon.style.left = "8%"
+                    leon.style.top = "20%";
+                    leon.style.left = "8%";
 
-                    sarah.style.top = "20%"
-                    sarah.style.left = "53%"
-                    
-                    houseInside.style.opacity = "100%"
+                    sarah.style.top = "20%";
+                    sarah.style.left = "53%";
+
+                    houseInside.style.opacity = "100%";
 
                     houseInside.addEventListener('click', () => {
-                        houseContainer.style.scale = '2'
-                        houseContainer.style.bottom = '-10%'
-                        houseContainer.style.left = '30%'
+                        houseContainer.style.scale = '2';
+                        houseContainer.style.bottom = '-10%';
+                        houseContainer.style.left = '30%';
 
                         setTimeout(() => {
-                            percentBoys = document.createElement("div")
-                            percentBoys.classList.add("percentage-boyHouse")
-                            percentBoys.classList.add("percentage-boy")
-                            houseContainer.appendChild(percentBoys)
+                            percentBoys = document.createElement("div");
+                            percentBoys.classList.add("percentage-boyHouse");
+                            percentBoys.classList.add("percentage-boy");
+                            houseContainer.appendChild(percentBoys);
 
-                            percentGirls = document.createElement("div")
-                            percentGirls.classList.add("percentage-girlHouse")
-                            percentGirls.classList.add("percentage-girl")
-                            houseContainer.appendChild(percentGirls)
+                            percentGirls = document.createElement("div");
+                            percentGirls.classList.add("percentage-girlHouse");
+                            percentGirls.classList.add("percentage-girl");
+                            houseContainer.appendChild(percentGirls);
 
-                            percentBoysContainer = document.createElement("div")
-                            percentBoysContainer.classList.add("percentBoyContainer")
+                            percentBoysContainer = document.createElement("div");
+                            percentBoysContainer.classList.add("percentBoyContainer");
                             houseContainer.appendChild(percentBoysContainer)
-                            boys = generateGroupeOfPeolpleSVG(50, percentBoysContainer, 'boyHouse')
+                            boys = generateGroupeOfPeolpleSVG(50, percentBoysContainer, 'boyHouse');
 
-                            percentGirlsContainer = document.createElement("div")
-                            percentGirlsContainer.classList.add("percentGirlContainer")
-                            houseContainer.appendChild(percentGirlsContainer)
-                            girls = generateGroupeOfPeolpleSVG(50, percentGirlsContainer, 'girlHouse')
+                            percentGirlsContainer = document.createElement("div");
+                            percentGirlsContainer.classList.add("percentGirlContainer");
+                            houseContainer.appendChild(percentGirlsContainer);
+                            girls = generateGroupeOfPeolpleSVG(50, percentGirlsContainer, 'girlHouse');
 
-                            fillPercentageOfPeople(13, 50, 'boyHouse', BOYSCOLOR)
-                            fillPercentageOfPeople(20, 50, 'girlHouse', GIRLSCOLOR)
+                            fillPercentageOfPeople(13, 50, 'boyHouse', BOYSCOLOR);
+                            fillPercentageOfPeople(20, 50, 'girlHouse', GIRLSCOLOR);
                         }, 1000);
                     })
                 }, 1000);
