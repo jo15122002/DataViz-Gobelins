@@ -404,6 +404,7 @@ function displaySlideHouse(){
                     houseInside.style.opacity = "100%";
 
                     houseInside.addEventListener('click', () => {
+                        houseContainer.style.zIndex = '999'
                         houseContainer.style.scale = '2';
                         houseContainer.style.bottom = '-10%';
                         houseContainer.style.left = '30%';

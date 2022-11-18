@@ -690,3 +690,19 @@ footer .btn-launch{
     width: 10%;
     height: 10%;
 }
+
+.percentage-girlHouse{
+    color: #9712DD;
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.percentage-boyHouse{
+    color: #FF791F;
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
