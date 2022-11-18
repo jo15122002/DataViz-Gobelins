@@ -390,6 +390,22 @@ footer .btn-launch{
 }
 
 /*Slide Bus*/
+.percentage-girl-bus{
+    color: #9712DD;
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.percentage-boy-bus{
+    color: #FF791F;
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
 #slide2{
     position: relative;
 }
