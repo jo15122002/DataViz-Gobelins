@@ -25,17 +25,11 @@ h2{
     font-family: 'Podkova', serif;
 }
 
-.percentage-boy, .percentage-girl{
-    font-size: 45px;
-    font-family: 'Antonio', sans-serif;
-}
-
-
-.percentage-girl{
+.percentage-girl-school{
     color: #9712DD;
 }
 
-.percentage-boy{
+.percentage-boy-school{
     color: #FF791F;
 }
 
@@ -61,7 +55,32 @@ html{
 
 .prev, .next{
     display: none;
+    width: 64px;
+    font-size: 45px;
+    height: 64px;
+    border: solid #332b36 5px;
+    color: #332b36;
 }
+
+.prev {
+    border-top-left-radius: 17px;
+    border-bottom-right-radius: 17px;
+}
+
+.next{
+    border-top-right-radius: 17px;
+    border-bottom-left-radius: 17px;
+    margin-top: 2%;
+}
+
+.next img{
+    padding-top: 9px;
+}
+
+.prev img{
+    padding-top: 9px;
+}
+
 
 a{
     background-color: white;
@@ -69,6 +88,11 @@ a{
     font-weight: bold;
     font-family: 'Podkova', serif;
     border: solid 2px;
+}
+
+p{
+    font-size: 24px;
+    font-family: 'Podkova', serif;
 }
 
 /* Page d'accueil */
@@ -170,6 +194,69 @@ a{
 
 #slide3{
     display : flex;
+    position: relative;
+}
+
+#slide3 p{
+    margin-bottom: 6%;
+    width: 62%;
+}
+
+.school{
+    position: absolute;
+    width: 24%;
+    top: 8%;
+    left: 9%;
+    z-index: 3;
+}
+
+.line-top-school{
+    position: absolute;
+    width: 35%;
+    top: 22%;
+}
+
+.line-bottom-school{
+    position: absolute;
+    width: 22%;
+    bottom: 33%;
+    right: -5%;
+}
+
+.school-scene-top{
+    position: absolute;
+    width: 10%;
+    top: 27%;
+    left: 17%;
+}
+
+.school-scene-bottom{
+    position: absolute;
+    width: 7%;
+    bottom: 19%;
+    right: 10%;
+}
+
+.fight-trace{
+    position: absolute;
+    width: 6%;
+    left: 59%;
+    top: 32%;
+}
+
+.ignored-trace{
+    position: absolute;
+    width: 8%;
+    left: 72%;
+    top: 29%;
+}
+
+.sexist-trace{
+    position: absolute;
+    width: 12%;
+    top: 32%;
+    left: 60%;
+
 }
 
 #slide3 .content{
@@ -183,30 +270,50 @@ a{
     display: flex;
     flex-direction: column;
     width: 50vw;
+    justify-content: center;
+    margin-top: 6%;
 }
 
 #slide3 .col-droite{
     width: 50vw;
+    padding-bottom: 4%;
 }
 
 #slide3 .buttons a{
-    margin-bottom: 5px;
-    margin-left: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 55%;
+    border: #332b36 solid 5px;
+    background-color: #332b36;
+    color: white;
+    width: 197px;
+}
+
+.btn-ignored{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.btn-sexist, .btn-fight{
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 64px;
-    width: 64px;
 }
 
 #slide3 .students{
-    width: 50%;
+    width: 500px;
     display: flex;
 }
 
-
-#slide3 .students .boys-students{
+#slide3 .students .girl-students{
     margin-right: 15px;
 }
+
+#slide3 .students .girl-school, #slide3 .students .boy-school{
+    margin-right: 5px;
+}
+
 
 #slide3 .students img{
     width: 10%;
@@ -216,13 +323,35 @@ a{
     display: flex;
 }
 
-
-#slide3 .percentage-boy{
-    margin-left: 13%;
+.percentage-boy-school, .percentage-girl-school{
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
-#slide3 .percentage-girl{
-    margin-left: 2%;
+.percentage-boy-school, .percentage-girl-school:before{
+    content: '';
+    width: 38px;
+    background-color: #332b36;
+    position: absolute;
+    height: 2px;
+
+}
+
+#slide3 .percentage-boy-school{
+    margin-left: 17%;
+}
+
+#slide3 .percentage-girl-school{
+    margin-left: 19%;
+}
+
+#slide3 a img{
+    width: 42px;
+    height: 42px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 /*Footer*/
@@ -236,6 +365,7 @@ footer{
     background-color: transparent;
     text-align: center;
     line-height: 50px;
+    z-index: 3;
 }
 
 footer img{
@@ -245,11 +375,18 @@ footer img{
 footer .btn-launch{
     padding: 0px 30px;
     border-top-left-radius: 12px;
+    border: 5px solid #332b36;
     border-bottom-right-radius: 12px;
     text-transform: uppercase;
     position: absolute;
     left: 80%;
     top: 20%;
+    color: #332b36;
+}
+
+.barre-etat{
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 /*Slide Bus*/
