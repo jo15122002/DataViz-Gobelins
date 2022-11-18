@@ -204,12 +204,13 @@ p{
     width: 62%;
 }
 
+
 .school{
     position: absolute;
     width: 24%;
     top: 8%;
     left: 9%;
-    z-index: 3;
+    z-index: 1;
 }
 
 .line-top-school{
@@ -354,6 +355,77 @@ p{
     height: 42px;
     margin-top: 10px;
     margin-left: 10px;
+}
+
+@media(max-width: 1200px){
+    .line-top-school{
+        width: 31%;
+        top: 27%;
+    }
+
+    .line-bottom-school{
+        width: 10%;
+        right: 0;
+    }
+
+    #slide3 p{
+        margin-bottom: 6%;
+        width: 90%;
+    }
+
+    #slide3 .col-droite{
+        margin-left: 33px;
+    }
+
+    #slide3 .col-gauche{
+        width: 28vw;
+        margin-top: 5%;
+        margin-right: 15%;
+    }
+
+    .school{
+        width: 20%;
+        top: 19%;
+        left: 10%;
+    }
+
+    .ignored-trace{
+        top: 31%;
+        left: 64%;
+    }
+
+    .fight-trace{
+        width: 7%;
+        left: 58%;
+        top: 35%;
+    }
+
+    .sexist-trace{
+        width: 13%;
+        top: 35%;
+        left: 61%;
+    }
+
+    #slide3 .percentage-boy-school{
+        margin-left: 25%;
+    }
+
+    #slide3 .percentage-girl-school{
+        margin-left: 30%;
+    }
+
+    .school-scene-bottom{
+        width: 6%;
+        bottom: 26%;
+        right: 4%;
+    }
+
+    .school-scene-top{
+        width: 7%;
+        top: 29%;
+        left: 22%;
+    }
+
 }
 
 /*Footer*/
