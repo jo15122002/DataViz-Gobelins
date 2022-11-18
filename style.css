@@ -916,3 +916,30 @@ footer .btn-launch{
     top: 36%;
     left: 33%;
 }
+
+@media(max-width: 1200px){
+    #slide5 .boy{
+        top: 0;
+        left: 34%;
+    }
+
+    #slide5 .girl{
+        top: 0%;
+        left: 43%;
+    }
+
+    .content{
+        margin-top:4%;
+    }
+
+    .orange-trace{
+        left: 45%;
+        top: 24%;
+    }
+
+    .purple-trace{
+        top: 29%;
+        left: 32%;
+    }
+
+}
