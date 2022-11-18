@@ -1132,7 +1132,24 @@ footer .btn-launch{
     left: 25%;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1500px){
+    #slide5 .content{
+        margin-left: 7%;
+        margin-top: 7%;
+    }
+
+    .orange-trace{
+        left: 45%;
+        top: 24%;
+    }
+
+    .purple-trace{
+        top: 29%;
+        left: 28%;
+    }
+}
+
+@media(max-width: 1350px){
     #slide5 .boy{
         top: 0;
         left: 34%;
