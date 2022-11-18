@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let btns_slides = document.querySelectorAll('.btn-slide');
     let btn_next = document.querySelector('.next');
     let btn_prev = document.querySelector('.prev');
+    let btn
 
     if(slide_state >= 2){
         btn_prev.style.display = 'inline-block';
@@ -27,6 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if(slide_state == 4){
             displaySlideHouse();
         }
+
+        if(slide_state == 5){
+            btn_next.style.display = "none";
+            document.querySelector('.btn-restart').style.display="inline-block";
+
+
+        }
+
     });
 
     btn_prev.addEventListener('click', (event) => {
@@ -41,9 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
 
-/*    document.querySelector('.btn-restart').addEventListener('click', () =>{
+    document.querySelector('.btn-restart').addEventListener('click', () =>{
         document.getElementById('slide1').scrollIntoView();
-    })*/
+        setTimeout(() => {
+            location.reload();
+        },1000)
+
+
+    })
 
     displaySlideHome();
     displaySlideSchool();
