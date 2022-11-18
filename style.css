@@ -76,7 +76,7 @@ html{
     padding-top: 4px;
 }
 
-.btn-credit{
+/* .btn-credit{
     display: none;
     font-size: 35px;
     border: solid #332b36 5px;
@@ -88,7 +88,7 @@ html{
     padding-right: 10px;
     height: 58px;
     padding-top: 4px;
-}
+} */
 
 .prev {
     border-top-left-radius: 17px;
@@ -125,6 +125,7 @@ p{
 }
 
 .sourceContainer{
+    display: none;
     height: 7%;
     position: absolute;
     top: 2%;
