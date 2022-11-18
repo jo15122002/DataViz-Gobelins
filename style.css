@@ -258,7 +258,7 @@ p{
     width: 7%;
 }
 
-@media(max-width: 1365px){
+@media(max-width: 1500px){
     .slide-home h1{
         margin-top: 19%;
     }
@@ -273,7 +273,7 @@ p{
     }
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1350px){
     .slide-home h1 {
         font-size: 108px;
         margin-top: 75px;
@@ -562,7 +562,7 @@ p{
     margin-left: 10px;
 }
 
-@media(max-width: 1366px){
+@media(max-width: 1500px){
     .school{
         top: 13%;
     }
@@ -572,7 +572,7 @@ p{
     }
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1350px){
     .line-top-school{
         width: 31%;
         top: 27%;
