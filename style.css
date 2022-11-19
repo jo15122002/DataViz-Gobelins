@@ -563,6 +563,18 @@ p{
     width: 43%;
 }
 
+#slide3 p span {
+    font-size: 45px;
+}
+
+#slide3 p .purple{
+    color: #9712DD;
+}
+
+#slide3 p .orange {
+    color: #FF791F;
+}
+
 
 .school{
     position: absolute;
@@ -602,8 +614,8 @@ p{
 .fight-trace{
     position: absolute;
     width: 10%;
-    left: 142px;
-    top: 134px;
+    left: 178px;
+    top: 160px;
 }
 
 .ignored-trace{
@@ -615,10 +627,9 @@ p{
 
 .sexist-trace{
     position: absolute;
-    width: 17%;
-    top: 166px;
-    left: 52px;
-
+    width: 23%;
+    top: 190px;
+    left: 4px;
 }
 
 #slide3 .content{
@@ -809,7 +820,6 @@ p{
         top: 29%;
         left: 22%;
     }
-
 }
 
 /*House slide*/

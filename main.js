@@ -299,7 +299,7 @@ function displaySlideSchool(){
         document.querySelector('.girl-school-6').style.transform = 'translate(0, 0)';
         document.querySelector('.boy-school-3').style.transform = 'translate(0, 0)';
 
-        desc.innerText = "2x plus de garçons que de filles victimes de bagarres.";
+        desc.innerHTML = "<span class='orange'>2x</span> plus de garçons que de filles victimes de bagarres.";
         ignored_trace.style.display = 'none';
         sexist_trace.style.display = 'none';
         fight_trace.style.display = 'inline-block';
@@ -335,7 +335,7 @@ function displaySlideSchool(){
         document.querySelector('.girl-school-6').style.transform = 'translate(0, 0)';
         document.querySelector('.boy-school-3').style.transform = 'translate(0, 0)';
 
-        desc.innerText = "2x plus de filles que de garçons sont victimes d’insultes sexistes.";
+        desc.innerHTML = "<span class='purple'>2x</span> plus de filles que de garçons sont victimes d’insultes sexistes.";
         ignored_trace.style.display = 'none';
         sexist_trace.style.display = 'inline-block';
         fight_trace.style.display = 'none';
