@@ -110,7 +110,6 @@ html{
     padding-top: 9px;
 }
 
-
 a{
     background-color: white;
     text-transform: uppercase;
@@ -384,282 +383,6 @@ p{
     }
 }
 
-
-/*Page école*/
-
-#slide3{
-    display : flex;
-    position: relative;
-}
-
-#slide3 p{
-    margin-bottom: 6%;
-    width: 62%;
-}
-
-
-.school{
-    position: absolute;
-    width: 24%;
-    top: 8%;
-    left: 9%;
-    z-index: 1;
-}
-
-.line-top-school{
-    position: absolute;
-    width: 35%;
-    top: 22%;
-}
-
-.line-bottom-school{
-    position: absolute;
-    width: 22%;
-    bottom: 33%;
-    right: -5%;
-}
-
-.school-scene-top{
-    position: absolute;
-    width: 10%;
-    top: 27%;
-    left: 17%;
-}
-
-.school-scene-bottom{
-    position: absolute;
-    width: 7%;
-    bottom: 19%;
-    right: 10%;
-}
-
-.fight-trace{
-    position: absolute;
-    width: 10%;
-    left: 142px;
-    top: 134px;
-}
-
-.ignored-trace{
-    position: absolute;
-    width: 15%;
-    left: 339px;
-    top: 111px;
-}
-
-.sexist-trace{
-    position: absolute;
-    width: 17%;
-    top: 136px;
-    left: 185px;
-
-}
-
-#slide3 .content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: auto;
-}
-
-#slide3 .col-gauche{
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    justify-content: center;
-    margin-top: 6%;
-}
-
-#slide3 .col-droite{
-    width: 50vw;
-    padding-bottom: 4%;
-    position: relative;
-}
-
-#slide3 .buttons a{
-    transition: ease 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    margin-left: 55%;
-    border: #332b36 solid 5px;
-    background-color: white;
-    color: #332b36;
-    width: 197px;
-}
-
-.btn-ignored{
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-.btn-sexist, .btn-fight{
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-#slide3 .buttons a:hover{
-    background-color: #332b36;
-    color: white;
-}
-
-#slide3 .buttons a:hover img{
-    filter: brightness(0) saturate(100%) invert(100%) sepia(18%) saturate(233%) hue-rotate(192deg) brightness(111%) contrast(108%);
-
-}
-
-#slide3 .students{
-    width: 500px;
-    display: flex;
-}
-
-#slide3 .students .girl-students{
-    margin-right: 15px;
-}
-
-#slide3 .students .girl-school, #slide3 .students .boy-school{
-    margin-right: 5px;
-}
-
-
-#slide3 .students img{
-    width: 10%;
-}
-
-#slide3 .percentage{
-    display: flex;
-}
-
-.percentage-boy-school, .percentage-girl-school{
-    font-size: 45px;
-    font-family: 'Antonio', sans-serif;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.percentage-boy-school, .percentage-girl-school:before{
-    content: '';
-    width: 38px;
-    background-color: #332b36;
-    position: absolute;
-    height: 2px;
-
-}
-
-#slide3 .percentage-boy-school{
-    margin-left: 255px;
-}
-
-#slide3 .percentage-girl-school{
-    margin-left: 150px;
-}
-
-#slide3 a img{
-    width: 42px;
-    height: 42px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-@media(max-width: 1500px){
-    .school{
-        top: 13%;
-    }
-
-    #slide3 .col-gauche{
-        margin-top: -5%;
-    }
-}
-
-@media(max-width: 1350px){
-    .line-top-school{
-        width: 31%;
-        top: 27%;
-    }
-
-    .line-bottom-school{
-        width: 10%;
-        right: 0;
-    }
-
-    #slide3 p{
-        margin-bottom: 6%;
-        width: 90%;
-    }
-
-    #slide3 .col-droite{
-        margin-left: 33px;
-    }
-
-    #slide3 .col-gauche{
-        width: 28vw;
-        margin-top: 5%;
-        margin-right: 15%;
-    }
-
-    .school{
-        width: 20%;
-        top: 19%;
-        left: 10%;
-    }
-
-    .school-scene-bottom{
-        width: 6%;
-        bottom: 26%;
-        right: 4%;
-    }
-
-    .school-scene-top{
-        width: 7%;
-        top: 29%;
-        left: 22%;
-    }
-
-}
-
-/*Footer*/
-
-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0px;
-    width: 100%;
-    height: 20vh;
-    background-color: transparent;
-    text-align: center;
-    line-height: 50px;
-    z-index: 3;
-}
-
-footer img{
-    width: 40%;
-}
-
-footer .btn-launch{
-    padding: 0px 30px;
-    border-top-left-radius: 12px;
-    border: 5px solid #332b36;
-    border-bottom-right-radius: 12px;
-    text-transform: uppercase;
-    position: absolute;
-    left: 80%;
-    top: 20%;
-    color: #332b36;
-}
-
-.barre-etat{
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-@media(max-width: 1200px){
-    .barre-etat {
-        margin-left: 8%;
-        margin-right: 8%;
-    }
-}
-
 /*Slide Bus*/
 .percentage-girl-bus{
     color: #9712DD;
@@ -757,7 +480,7 @@ footer .btn-launch{
 }
 
 #slide2 .percentage-boy{
-    
+
 }
 
 #slide2 .percentage-girl{
@@ -826,8 +549,269 @@ footer .btn-launch{
     }
 }
 
+/*Page école*/
+
+#slide3{
+    display : flex;
+    position: relative;
+}
+
+#slide3 p{
+    margin-bottom: 6%;
+    width: 44%;
+}
+
+
+.school{
+    position: absolute;
+    width: 24%;
+    top: 8%;
+    left: 9%;
+    z-index: 1;
+}
+
+.line-top-school{
+    position: absolute;
+    width: 35%;
+    top: 22%;
+}
+
+.line-bottom-school{
+    position: absolute;
+    width: 34%;
+    bottom: 33%;
+    right: -5%;
+}
+
+.school-scene-top{
+    position: absolute;
+    width: 10%;
+    top: 27%;
+    left: 17%;
+}
+
+.school-scene-bottom{
+    position: absolute;
+    width: 7%;
+    bottom: 19%;
+    right: 10%;
+}
+
+.fight-trace{
+    position: absolute;
+    width: 10%;
+    left: 142px;
+    top: 134px;
+}
+
+.ignored-trace{
+    position: absolute;
+    width: 15%;
+    left: 15px;
+    top: 135px;
+}
+
+.sexist-trace{
+    position: absolute;
+    width: 17%;
+    top: 166px;
+    left: 52px;
+
+}
+
+#slide3 .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+
+#slide3 .col-gauche{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+#slide3 .col-droite{
+    width: 50vw;
+    padding-bottom: 4%;
+    position: relative;
+}
+
+#slide3 .buttons a{
+    transition: ease 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 55%;
+    border: #332b36 solid 5px;
+    background-color: white;
+    color: #332b36;
+    width: 197px;
+}
+
+#slide3 .students .boys-students, #slide3 .students .girls-students{
+    position: relative;
+}
+
+#slide3 .insultes{
+    transition: ease 0.5s;
+    display: none;
+    position: absolute;
+    width: 25%!important;
+}
+
+#slide3 .insulte-etoiles{
+    top: 89px;
+    left: 97px;
+}
+
+#slide3 .insulte-arobase{
+    top: -33px;
+    left: 98px;
+
+}
+
+#slide3 .insulte-hashtag{
+    top: 48px;
+    left: -22px;
+}
+
+.btn-ignored{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.btn-sexist, .btn-fight{
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#slide3 .buttons a:hover{
+    background-color: #332b36;
+    color: white;
+}
+
+#slide3 .buttons a:hover img{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(18%) saturate(233%) hue-rotate(192deg) brightness(111%) contrast(108%);
+
+}
+
+#slide3 .students{
+    width: 275px;
+    display: flex;
+}
+
+#slide3 .students .girl-students{
+    margin-right: 15px;
+}
+
+#slide3 .students .girl-school, #slide3 .students .boy-school{
+    margin-right: 5px;
+    transition: ease 0.5s;
+}
+
+
+#slide3 .students img{
+    width: 10%;
+}
+
+#slide3 .percentage{
+    display: flex;
+}
+
+.percentage-boy-school, .percentage-girl-school{
+    font-size: 45px;
+    font-family: 'Antonio', sans-serif;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.percentage-boy-school, .percentage-girl-school:before{
+    content: '';
+    width: 38px;
+    background-color: #332b36;
+    position: absolute;
+    height: 2px;
+
+}
+
+#slide3 .percentage-boy-school{
+    margin-left: 170px;
+}
+
+#slide3 .percentage-girl-school{
+    margin-left: 33px;
+}
+
+#slide3 a img{
+    width: 42px;
+    height: 42px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+@media(max-width: 1500px){
+    .school{
+        top: 13%;
+    }
+
+    #slide3 .col-gauche{
+        margin-top: -5%;
+    }
+}
+
+@media(max-width: 1350px){
+    .line-top-school{
+        width: 31%;
+        top: 27%;
+    }
+
+    .line-bottom-school{
+        width: 19%;
+        right: 0;
+    }
+
+    #slide3 p{
+        margin-bottom: 6%;
+        width: 90%;
+    }
+
+    #slide3 .col-droite{
+        margin-left: 33px;
+    }
+
+    #slide3 .col-gauche{
+        width: 28vw;
+        margin-top: 5%;
+        margin-right: 15%;
+    }
+
+    .school{
+        width: 20%;
+        top: 19%;
+        left: 10%;
+    }
+
+    .school-scene-bottom{
+        width: 6%;
+        bottom: 26%;
+        right: 4%;
+    }
+
+    .school-scene-top{
+        width: 7%;
+        top: 29%;
+        left: 22%;
+    }
+
+}
 
 /*House slide*/
+
 #slide4{
     position: relative;
 }
@@ -997,7 +981,7 @@ footer .btn-launch{
     #slide4 .doggo-slide4{
         left: 45%;
     }
-    
+
     #slide4 .sapin2-slide4{
         left: 90%;
     }
@@ -1179,6 +1163,50 @@ footer .btn-launch{
     }
 }
 
+/*Slide crédits*/
+
 #slide6{
     background-color: #332b36;
+}
+
+/*Footer*/
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    height: 20vh;
+    background-color: transparent;
+    text-align: center;
+    line-height: 50px;
+    z-index: 3;
+}
+
+footer img{
+    width: 40%;
+}
+
+footer .btn-launch{
+    padding: 0px 30px;
+    border-top-left-radius: 12px;
+    border: 5px solid #332b36;
+    border-bottom-right-radius: 12px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 80%;
+    top: 20%;
+    color: #332b36;
+}
+
+.barre-etat{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+@media(max-width: 1200px){
+    .barre-etat {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
 }

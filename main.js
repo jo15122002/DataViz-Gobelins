@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     //Variables
     const NBR_SLIDE = document.querySelectorAll('.slide').length;
 
-    let btns_slides = document.querySelectorAll('.btn-slide');
     let btn_next = document.querySelector('.next');
     let btn_prev = document.querySelector('.prev');
 
@@ -36,11 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-/*    document.querySelector('.btn-credit').addEventListener('click', () =>{
-        slide_state += 1;
-        document.getElementById('slide'+slide_state).scrollIntoView();
-    });*/
-
     btn_prev.addEventListener('click', (event) => {
         slide_state -= 1;
         if(slide_state <= 2 ){
@@ -48,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.getElementById('slide'+slide_state).scrollIntoView();
         document.querySelector('.barre-etat').src = 'img/barre-etat-'+slide_state+'.png';
-
     })
 
     document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
@@ -58,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             location.reload();
         },1000)
-
-
     })
 
     displaySlideHome();
@@ -68,42 +59,39 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function displaySlideBus(){
+
     let busPassengers = document.querySelectorAll('.passenger');
     busPassengers.forEach(passenger => {
         passenger.remove()
     });
 
     const BUS = document.querySelector('.bus-slide2');
-    numberOfPassengers = 20.0;
-    numberOfLines = 2.0;
-    numberOfSeatsPerlines = numberOfPassengers / numberOfLines;
-
-    foule = document.querySelector(".foule-slide2");
-
-    busInterieur = document.querySelector('#slide2 .bus-interieur-slide2')
-
-    busCote = document.querySelector('.bus-cote-slide2')
-    console.log(busCote)
+    let numberOfPassengers = 20.0;
+    let numberOfLines = 2.0;
+    let numberOfSeatsPerlines = numberOfPassengers / numberOfLines;
+    let foule = document.querySelector(".foule-slide2");
+    let busInterieur = document.querySelector('#slide2 .bus-interieur-slide2');
+    let busCote = document.querySelector('.bus-cote-slide2');
 
     busCote.style.left = "0%";
     busCote.style.opacity = "0%";
 
-    busInterieur.style.opacity = "0%"
+    busInterieur.style.opacity = "0%";
 
-    busCote.style.opacity = "100%"
-    foule.style.opacity = "100%"
+    busCote.style.opacity = "100%";
+    foule.style.opacity = "100%";
     setTimeout(() => {
         busCote.style.left = "40%";
         setTimeout(() => {
-            busInterieur.style.opacity = "100%"
-            foule.style.opacity = "0%"
+            busInterieur.style.opacity = "100%";
+            foule.style.opacity = "0%";
         }, 1000);
     }, 1000);
 
     setTimeout(() => {
         for(let i = 0; i < numberOfPassengers; i++){
             let passenger = document.createElement('div');
-            let passengerImg = buildSVGBoy();
+            let passengerImg = buildSVGBoy('#CFCFCF');
             passengerImg.classList.add('passenger-img');
             passenger.appendChild(passengerImg);
             BUS.appendChild(passenger);
@@ -144,20 +132,20 @@ function displaySlideBus(){
 function fillEmUp(){
     //Filles 23% garcons 11%
 
-    boys = document.querySelectorAll(".passenger-boy");
-    girls = document.querySelectorAll(".passenger-girl");
+    let boys = document.querySelectorAll(".passenger-boy");
+    let girls = document.querySelectorAll(".passenger-girl");
 
     girls.forEach((element, index) =>{
-        fillDiv = document.createElement("div");
+        let fillDiv = document.createElement("div");
         element.appendChild(fillDiv);
         fillDiv.classList.add("fillPassenger");
     })
 
-    boysToFill = [
+    let boysToFill = [
         boys[9]
     ]
 
-    girlsToFill = [
+    let girlsToFill = [
         girls[9], girls[8], girls[7]
     ]
 
@@ -187,7 +175,6 @@ function goToPlace(passenger, x1, y, x2){
 function displaySlideHome(){
 
     let btn_start = document.querySelector('.btn-launch');
-
     let names = document.querySelectorAll('.name');
 
     btn_start.addEventListener('click', ()=> {
@@ -196,7 +183,6 @@ function displaySlideHome(){
             name.classList.add('animate__fadeOut');
         });
 
-
         document.querySelector('.btn-launch').style.display = "none";
         document.querySelector('.btn-launch').classList.remove('animate__infinite');
         busAnimation();
@@ -204,7 +190,6 @@ function displaySlideHome(){
         setTimeout(() => {
             displaySlideBus();
         },5000);
-
     });
 }
 
@@ -230,6 +215,7 @@ function busAnimation(){
         setTimeout(() =>{
             bus.style.display = 'none';
         }, 1000);
+
     }, 3500);
 
     setTimeout(() => {
@@ -249,8 +235,8 @@ function displaySlideSchool(){
     let btn_ignored = document.querySelector('.btn-ignored');
     let btn_sexist = document.querySelector('.btn-sexist');
 
-    generateGroupeOfPeolpleSVG(20,boys_students,'boy-school');
-    generateGroupeOfPeolpleSVG(20,girls_students,'girl-school');
+    generateGroupeOfPeolpleSVG(20,boys_students,'boy-school', '#ffd4b8');
+    generateGroupeOfPeolpleSVG(20,girls_students,'girl-school', '#e0b2f4');
 
     /*To do : mettre ces données dans un fichier JSON*/
     let percentage_fight_girl = 11;
@@ -269,39 +255,68 @@ function displaySlideSchool(){
     let ignored_trace = document.querySelector('.ignored-trace');
     let sexist_trace = document.querySelector('.sexist-trace');
 
+    let insultes = document.querySelectorAll(".insultes");
+
     fight_trace.style.display = 'none';
     ignored_trace.style.display = 'none';
     sexist_trace.style.display = 'none';
-    desc.innerText = "";
 
-        btn_fight.addEventListener('click', ()=>{
-        clearSvg(number_of_boy, 'boy-school');
-        clearSvg(number_of_girl, 'girl-school');
-        fillPercentageOfPeople(percentage_fight_boy, number_of_boy, 'boy-school', BOYSCOLOR);
-        fillPercentageOfPeople(percentage_fight_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
-        desc.innerText = "les garçons sont davantage impliqués et victimes des bagarres que les filles.";
+    function studentChangeStat(percentage_boy, percentage_girl){
+        clearSvg(number_of_boy, 'boy-school', '#ffd4b8');
+        clearSvg(number_of_girl, 'girl-school', '#e0b2f4');
+        fillPercentageOfPeople(percentage_boy, number_of_boy, 'boy-school', BOYSCOLOR);
+        fillPercentageOfPeople(percentage_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
+    }
+
+    btn_fight.addEventListener('click', ()=>{
+
+        studentChangeStat(percentage_fight_boy,percentage_fight_girl);
+
+        insultes.forEach(function(insulte){
+            insulte.style.display ="none";
+        });
+
+        document.querySelector('.girl-school-2').style.transform = 'translate(0, 0)';
+        document.querySelector('.girl-school-6').style.transform = 'translate(0, 0)';
+        document.querySelector('.boy-school-3').style.transform = 'translate(0, 0)';
+
+        desc.innerText = "2x plus de garçons que de filles victimes de bagarres.";
         ignored_trace.style.display = 'none';
         sexist_trace.style.display = 'none';
         fight_trace.style.display = 'inline-block';
     });
 
     btn_ignored.addEventListener('click', () => {
-        clearSvg(number_of_boy, 'boy-school');
-        clearSvg(number_of_girl, 'girl-school');
-        fillPercentageOfPeople(percentage_ignored_boy, number_of_boy, 'boy-school', BOYSCOLOR);
-        fillPercentageOfPeople(percentage_ignored_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
-        desc.innerText = "les filles se sentent davantage mises à l’écart que les garçons.";
+
+        studentChangeStat(percentage_ignored_boy,percentage_ignored_girl,percentage_sexist_insult_girl);
+
+        insultes.forEach(function(insulte){
+            insulte.style.display ="none";
+        });
+
+        document.querySelector('.girl-school-2').style.transform = 'translate(-147px, -115px)';
+        document.querySelector('.girl-school-6').style.transform = 'translate(-111px, 214px)';
+        document.querySelector('.boy-school-3').style.transform = 'translate(195px, 143px)';
+
+        desc.innerText = "Les filles se sentent davantage mises à l’écart.";
         ignored_trace.style.display = 'inline-block';
         sexist_trace.style.display = 'none';
         fight_trace.style.display = 'none';
     })
 
     btn_sexist.addEventListener('click', () => {
-        clearSvg(number_of_boy,'boy-school');
-        clearSvg(number_of_girl, 'girl-school');
-        fillPercentageOfPeople(percentage_sexist_insult_boy, number_of_boy, 'boy-school', BOYSCOLOR);
-        fillPercentageOfPeople(percentage_sexist_insult_girl, number_of_girl, 'girl-school', GIRLSCOLOR);
-        desc.innerText = "davantage de filles sont victimes de moqueries et d’insultes sexistes.";
+
+        studentChangeStat(percentage_sexist_insult_boy,percentage_sexist_insult_girl);
+
+        insultes.forEach(function(insulte){
+           insulte.style.display ="inline";
+        });
+
+        document.querySelector('.girl-school-2').style.transform = 'translate(0, 0)';
+        document.querySelector('.girl-school-6').style.transform = 'translate(0, 0)';
+        document.querySelector('.boy-school-3').style.transform = 'translate(0, 0)';
+
+        desc.innerText = "2x plus de filles que de garçons sont victimes d’insultes sexistes.";
         ignored_trace.style.display = 'none';
         sexist_trace.style.display = 'inline-block';
         fight_trace.style.display = 'none';
@@ -325,18 +340,18 @@ function fillPercentageOfPeople(percentageValue, divPeoples, peopleConcerned, co
     }
 }
 
-function clearSvg(number_of_people, peopleConcerned){
+function clearSvg(number_of_people, peopleConcerned, baseColor){
     for ( let i = 0 ; i < number_of_people-1; i++ ){
         let people_concerned = document.querySelector('.'+peopleConcerned+'-'+i);
-        people_concerned.style.fill = '#CFCFCF';
+        people_concerned.style.fill = baseColor;
     }
 }
 
-function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className){
+function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className, colorOfSvg){
     let generatedPeoples = [];
 
     for(let i=0; i<numberOfPeople; i++){
-        let svg = buildSVGBoy();
+        let svg = buildSVGBoy(colorOfSvg);
         svg.classList.add(className+'-'+i);
         svg.classList.add(className);
         parent.appendChild(svg);
@@ -346,7 +361,7 @@ function generateGroupeOfPeolpleSVG(numberOfPeople, parent, className){
     return generatedPeoples;
 }
 
-function buildSVGBoy(){
+function buildSVGBoy(colorOfSvg){
 
     let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     let path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -354,7 +369,7 @@ function buildSVGBoy(){
     let path3 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     let path4 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
-    svg.setAttribute('fill', '#CFCFCF');
+    svg.setAttribute('fill', colorOfSvg);
     svg.setAttribute('viewBox', '0 0 18 37');
     svg.setAttribute('width', '18');
     svg.setAttribute('height', '37');
@@ -376,12 +391,10 @@ function buildSVGBoy(){
 }
 
 function displaySlideHouse(){
-    bus = document.querySelector('#slide4 .bus');
-    kids = document.querySelector('#slide4 .kids');
-    house = document.querySelector('#slide4 .houseContainer');
+    let bus = document.querySelector('#slide4 .bus');
+    let kids = document.querySelector('#slide4 .kids');
+    let house = document.querySelector('#slide4 .houseContainer');
 
-    bus.style.opacity = '0%';
-    bus.style.left = '0%';
     kids.style.opacity = '0%';
 
     bus.style.opacity = '100%';
@@ -402,11 +415,10 @@ function displaySlideHouse(){
                 kids.style.scale = "0.5";
                 kids.style.opacity = "0%";
                 setTimeout(() => {
-                    leon = kids.querySelector(".leon");
-                    sarah = kids.querySelector(".sarah");
-                    houseInside = document.querySelector("#slide4 .house-inside");
-                    houseImg = document.querySelector('#slide4 .houseImg');
-                    houseContainer = document.querySelector('#slide4 .houseContainer');
+                    let leon = kids.querySelector(".leon");
+                    let sarah = kids.querySelector(".sarah");
+                    let houseInside = document.querySelector("#slide4 .house-inside");
+                    let houseContainer = document.querySelector('#slide4 .houseContainer');
                     houseInside.appendChild(leon);
                     houseInside.appendChild(sarah);
 
@@ -419,16 +431,11 @@ function displaySlideHouse(){
                     houseInside.style.opacity = "100%";
 
                     houseInside.addEventListener('click', () => {
-                        //document.querySelector(".next").style.zIndex = '10'
-                        //document.querySelector(".prev").style.zIndex = '10'
 
                         document.querySelector(".doggo-slide4").style.opacity = "0%"
                         document.querySelector(".sapin-slide4").style.opacity = "0%"
-                        document.querySelector(".sapin2-slide4").style.opacity = "0%"    
-                        console.log(document.querySelector(".next"))
-                        console.log(document.querySelector(".prev"))
+                        document.querySelector(".sapin2-slide4").style.opacity = "0%"
 
-                        //houseContainer.style.zIndex = '10'
                         houseContainer.style.scale = '2';
                         if(window.innerWidth <= 1200){
                             houseContainer.style.left = '21%';
@@ -439,25 +446,19 @@ function displaySlideHouse(){
                         }
 
                         setTimeout(() => {
-                            percentBoys = document.createElement("div");
-                            percentBoys.classList.add("percentage-boyHouse");
-                            percentBoys.classList.add("percentage-boy");
+                            let percentBoys = percentageBuild("div","percentage-boyHouse", "percentage-boy");
                             houseContainer.appendChild(percentBoys);
 
-                            percentGirls = document.createElement("div");
-                            percentGirls.classList.add("percentage-girlHouse");
-                            percentGirls.classList.add("percentage-girl");
+                            let percentGirls = percentageBuild("div","percentage-girlHouse", "percentage-girl");
                             houseContainer.appendChild(percentGirls);
 
-                            percentBoysContainer = document.createElement("div");
-                            percentBoysContainer.classList.add("percentBoyContainer");
+                            let percentBoysContainer = percentageBuild("div","percentBoyContainer");
                             houseContainer.appendChild(percentBoysContainer)
-                            boys = generateGroupeOfPeolpleSVG(50, percentBoysContainer, 'boyHouse');
+                            let boys = generateGroupeOfPeolpleSVG(50, percentBoysContainer, 'boyHouse', '#ffd4b8');
 
-                            percentGirlsContainer = document.createElement("div");
-                            percentGirlsContainer.classList.add("percentGirlContainer");
+                            let percentGirlsContainer = percentageBuild("div","percentGirlContainer");
                             houseContainer.appendChild(percentGirlsContainer);
-                            girls = generateGroupeOfPeolpleSVG(50, percentGirlsContainer, 'girlHouse');
+                            let girls = generateGroupeOfPeolpleSVG(50, percentGirlsContainer, 'girlHouse', '#e0b2f4');
 
                             fillPercentageOfPeople(13, 50, 'boyHouse', BOYSCOLOR);
                             fillPercentageOfPeople(20, 50, 'girlHouse', GIRLSCOLOR);
@@ -467,4 +468,13 @@ function displaySlideHouse(){
             }, 1000);
         }, 1000);
     }, 2000);
+}
+
+function percentageBuild(elementType, class1Name, class2Name=null){
+    let percentGenre = document.createElement(elementType);
+    percentGenre.classList.add(class1Name);
+    if(class2Name != null){
+        percentGenre.classList.add(class2Name);
+    }
+    return percentGenre;
 }
