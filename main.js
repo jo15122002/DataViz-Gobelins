@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let btn_next = document.querySelector('.next');
     let btn_prev = document.querySelector('.prev');
-
-    if(slide_state >= 2){
-        btn_prev.style.display = 'inline-block';
-    }
+    let btn_credit = document.querySelector('.btn-credit');
+    let btn_restart = document.querySelector('.btn-restart');
+    let btn_return = document.querySelector('.btn-return');
+    let barre_state = document.querySelector('.barre-etat');
 
     btn_next.addEventListener('click',(event) => {
         slide_state+=1;
@@ -35,23 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    btn_credit.addEventListener('click', () => {
+        slide_state+=1;
+        document.getElementById('slide'+slide_state).scrollIntoView();
+        barre_state.style.visibility='hidden';
+        btn_prev.style.visibility='hidden';
+        btn_restart.style.visibility='hidden';
+
+    })
+
+    btn_return.addEventListener('click', () => {
+        slide_state-=1;
+        document.getElementById('slide'+slide_state).scrollIntoView();
+        setTimeout(() => {
+            barre_state.style.visibility='visible';
+            btn_prev.visibility='visible';
+            btn_restart.style.visibility='visible';
+        },500)
+    })
+
     btn_prev.addEventListener('click', (event) => {
         slide_state -= 1;
         if(slide_state <= 2 ){
             btn_prev.style.display = 'none';
         }
         document.getElementById('slide'+slide_state).scrollIntoView();
-        document.querySelector('.barre-etat').src = 'img/barre-etat-'+slide_state+'.png';
+        barre_state.src = 'img/barre-etat-'+slide_state+'.png';
     })
 
-    document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
-
-    document.querySelector('.btn-restart').addEventListener('click', () =>{
+    btn_restart.addEventListener('click', () =>{
         document.getElementById('slide1').scrollIntoView();
         setTimeout(() => {
             location.reload();
         },1000)
     })
+
+    document.querySelector('.slides-container').style.width = NBR_SLIDE * 100+'vw';
 
     displaySlideHome();
     displaySlideSchool();
