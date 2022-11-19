@@ -143,6 +143,7 @@ p{
 
 .sourceContent{
     font-family: 'Podkova', serif;
+    font-size: 1vw;
     background-color: #332b36;
     color: white;
     display: flex;
