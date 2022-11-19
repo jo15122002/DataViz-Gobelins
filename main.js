@@ -459,6 +459,9 @@ function displaySlideHouse(){
 
                     houseInside.addEventListener('click', () => {
                         clearInterval(intervalInsults);
+                        leon.classList.remove("animate__animated", "animate__infinite", "animate__pulse")
+                        sarah.classList.remove("animate__animated", "animate__infinite", "animate__pulse")
+                        houseInside.classList.remove("animate__animated", "animate__infinite", "animate__pulse")
 
                         document.querySelector(".doggo-slide4").style.opacity = "0%"
                         document.querySelector(".sapin-slide4").style.opacity = "0%"
