@@ -830,6 +830,7 @@ p{
 }
 
 .houseImg{
+    transition: 1s all ease;
     position: relative;
     height: 100%;
 }
@@ -865,7 +866,18 @@ p{
 }
 
 #slide4 .house-inside-img{
+    transition: all 1s ease;
     height: 100%;
+}
+
+#slide4 .house-inside-cropped{
+    opacity: 0%;
+    position: absolute;
+    width: 100%;    
+    top: -39%;
+    left: -8%;
+    height: 102%;
+    width: 115%;
 }
 
 #slide4 .houseContainer .kid{
