@@ -454,13 +454,16 @@ function displaySlideHouse(){
                         document.querySelector(".doggo-slide4").style.opacity = "0%"
                         document.querySelector(".sapin-slide4").style.opacity = "0%"
                         document.querySelector(".sapin2-slide4").style.opacity = "0%"
+                        document.querySelector(".house-inside-img").style.opacity = "0%"
+                        document.querySelector(".houseImg").style.opacity = "0%"
+                        document.querySelector(".house-inside-cropped").style.opacity = "100%"
 
                         houseContainer.style.scale = '2';
                         if(window.innerWidth <= 1200){
                             houseContainer.style.left = '21%';
-                            houseContainer.style.bottom = '-5%';
+                            houseContainer.style.bottom = '12%';
                         }else{
-                            houseContainer.style.bottom = '-10%';
+                            houseContainer.style.bottom = '7%';
                             houseContainer.style.left = '30%';
                         }
 
