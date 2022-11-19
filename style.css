@@ -991,6 +991,12 @@ p{
     left: 76%;
 }
 
+.insult{
+    position: absolute;
+    z-index: 1;
+    width: 10%;
+}
+
 @media(max-width: 1350px){
     #slide4 .doggo-slide4{
         left: 45%;

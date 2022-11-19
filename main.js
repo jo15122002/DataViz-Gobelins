@@ -449,7 +449,16 @@ function displaySlideHouse(){
 
                     houseInside.style.opacity = "100%";
 
+                    leon.classList.add("animate__animated", "animate__infinite", "animate__pulse")
+                    sarah.classList.add("animate__animated", "animate__infinite", "animate__pulse")
+                    houseInside.classList.add("animate__animated", "animate__infinite", "animate__pulse")
+
+                    intervalInsults = setInterval(() => {
+                        createInsult()
+                    }, 1000);
+
                     houseInside.addEventListener('click', () => {
+                        clearInterval(intervalInsults);
 
                         document.querySelector(".doggo-slide4").style.opacity = "0%"
                         document.querySelector(".sapin-slide4").style.opacity = "0%"
@@ -490,6 +499,27 @@ function displaySlideHouse(){
             }, 1000);
         }, 1000);
     }, 2000);
+}
+
+function createInsult(){
+    leon = document.querySelector('#slide4 .leon')
+    sarah = document.querySelector('#slide4 .sarah')
+    insults = ['./img/insulte'+ String.fromCharCode(64) +'.png', './img/insultehashtag.png', './img/insulteetoiles.png']
+    let insult = document.createElement('img');
+    document.querySelector('#slide4 .house-inside').appendChild(insult);
+    insult.src = insults[Math.floor(Math.random() * insults.length)];
+    insult.classList.add('insult');
+    if(Math.random() > 0.5){
+        insult.style.left = leon.offsetLeft + leon.offsetWidth*1.5 + 'px';
+        insult.style.top = leon.offsetTop + 'px';
+    }else{
+        insult.style.left = sarah.offsetLeft + sarah.offsetWidth*1.5 + 'px';
+        insult.style.top = sarah.offsetTop + 'px';
+    }
+    insult.classList.add("animate__animated", 'animate__fadeOutUp');
+    setTimeout(() => {
+        insult.remove();
+    }, 1000);
 }
 
 function percentageBuild(elementType, class1Name, class2Name=null){
