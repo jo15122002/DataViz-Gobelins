@@ -239,12 +239,12 @@ function displaySlideSchool(){
     generateGroupeOfPeolpleSVG(20,girls_students,'girl-school', '#e0b2f4');
 
     /*To do : mettre ces données dans un fichier JSON*/
-    let percentage_fight_girl = 11;
-    let percentage_fight_boy = 21;
-    let percentage_ignored_boy = 35;
-    let percentage_ignored_girl = 42;
-    let percentage_sexist_insult_boy = 6;
-    let percentage_sexist_insult_girl = 11;
+    let percentage_fight_girl = data.slide3.bagarre.fille;
+    let percentage_fight_boy = data.slide3.bagarre.garcon;
+    let percentage_ignored_boy = data.slide3.rejet.garcon;
+    let percentage_ignored_girl = data.slide3.rejet.fille;
+    let percentage_sexist_insult_boy = data.slide3.insultes.garcon;
+    let percentage_sexist_insult_girl = data.slide3.insultes.fille;
 
     let number_of_boy = document.querySelectorAll('.boy-school').length;
     let number_of_girl = document.querySelectorAll('.girl-school').length;
@@ -454,14 +454,14 @@ function displaySlideHouse(){
 
                             let percentBoysContainer = percentageBuild("div","percentBoyContainer");
                             houseContainer.appendChild(percentBoysContainer)
-                            let boys = generateGroupeOfPeolpleSVG(50, percentBoysContainer, 'boyHouse', '#ffd4b8');
+                            let boys = generateGroupeOfPeolpleSVG(10, percentBoysContainer, 'boyHouse', '#ffd4b8');
 
                             let percentGirlsContainer = percentageBuild("div","percentGirlContainer");
                             houseContainer.appendChild(percentGirlsContainer);
-                            let girls = generateGroupeOfPeolpleSVG(50, percentGirlsContainer, 'girlHouse', '#e0b2f4');
+                            let girls = generateGroupeOfPeolpleSVG(10, percentGirlsContainer, 'girlHouse', '#e0b2f4');
 
-                            fillPercentageOfPeople(13, 50, 'boyHouse', BOYSCOLOR);
-                            fillPercentageOfPeople(20, 50, 'girlHouse', GIRLSCOLOR);
+                            fillPercentageOfPeople(data.slide4.garcon, 10, 'boyHouse', BOYSCOLOR);
+                            fillPercentageOfPeople(data.slide4.fille, 10, 'girlHouse', GIRLSCOLOR);
                         }, 1000);
                     })
                 }, 1000);
