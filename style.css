@@ -900,11 +900,6 @@ p{
     flex-wrap: wrap;
 }
 
-#slide4 .percentBoyContainer .boyHouse{
-    width: 10%;
-    height: 10%;
-}
-
 #slide4 .percentGirlContainer{
     background-color: #faf8f1;
     position: absolute;
@@ -914,11 +909,6 @@ p{
     height: 20%;
     display: flex;
     flex-wrap: wrap;
-}
-
-#slide4 .percentGirlContainer .girlHouse{
-    width: 10%;
-    height: 10%;
 }
 
 .percentage-girlHouse{
