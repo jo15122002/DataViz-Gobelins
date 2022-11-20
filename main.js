@@ -257,7 +257,6 @@ function displaySlideSchool(){
     generateGroupeOfPeolpleSVG(20,boys_students,'boy-school', '#ffd4b8');
     generateGroupeOfPeolpleSVG(20,girls_students,'girl-school', '#e0b2f4');
 
-    /*To do : mettre ces données dans un fichier JSON*/
     let percentage_fight_girl = data.slide3.bagarre.fille;
     let percentage_fight_boy = data.slide3.bagarre.garcon;
     let percentage_ignored_boy = data.slide3.rejet.garcon;
@@ -343,7 +342,7 @@ function displaySlideSchool(){
 }
 
 function fillPercentageOfPeople(percentageValue, divPeoples, peopleConcerned, color){
-    let relative_percentage = Math.round(percentageValue*divPeoples)/100;
+    let relative_percentage = Math.round(percentageValue*divPeoples/100);
     for ( let i = 0 ; i < relative_percentage; i++){
         setTimeout(() => {
             let people_concerned = document.querySelector('.'+peopleConcerned+'-'+i);
